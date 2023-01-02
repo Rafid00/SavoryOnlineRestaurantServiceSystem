@@ -1,0 +1,61 @@
+<nav class="text-white bg-[#614124] h-[84.5px]">
+         <div class="logo-nav absolute left-[50%] translate-x-[-50%]">
+            <svg
+               class="w-[250px] h-auto"
+               width="5026"
+               height="3071"
+               viewBox="0 0 5026 3071"
+               fill="none"
+               xmlns="http://www.w3.org/2000/svg"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+               <g id="LOGO">
+                  <path
+                     id="Union"
+                     fill-rule="evenodd"
+                     clip-rule="evenodd"
+                     d="M2513.5 0H0V1690H356C784.4 1690 1056.5 2047 1139 2225.5V2220.73C1390.79 2724.82 1911.72 3071 2513.5 3071C3134.23 3071 3668.94 2702.67 3910.98 2172.65C3998.27 2010.48 4208.9 1754.27 4525.09 1690H5026V0H2513.5Z"
+                     fill="#614124"
+                  />
+                  <a href="#">
+                     <g id="MainLogo" class="hover:scale-105 origin-center transition-all duration-200">
+                        <rect
+                           id="image 2"
+                           x="1435"
+                           y="458"
+                           width="2156"
+                           height="2156"
+                           rx="1078"
+                           fill="url(#pattern0)"
+                           stroke="#614124"
+                           stroke-width="2"
+                        />
+                     </g>
+                  </a>
+               </g>
+               <defs>
+                  <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                     <use xlink:href="#image0_2_11" transform="scale(0.000712251)" />
+                  </pattern>
+                  <image id="image0_2_11" href="images/sm-logo.png" width="1404" height="1404" />
+               </defs>
+            </svg>
+         </div>
+         <div class="menu flex gap-[300px] justify-center items-center h-full">
+            <div class="left-menu">
+               <ul class="flex gap-10 text-sm">
+                  <li class="hover:text-yellow-500 transition-all duration-75"><a href="">ABOUT</a></li>
+                  <li class="hover:text-yellow-500 transition-all duration-75"><a href="">CONTACT</a></li>
+                  <li class="hover:text-yellow-500 transition-all duration-75"><a href="">ORDER</a></li>
+               </ul>
+            </div>
+
+            <div class="right-menu">
+               <ul class="flex gap-10 text-sm">
+                  <li class="hover:text-yellow-500 transition-all duration-75"><a href="">SIGN IN</a></li>
+                  <li class="hover:text-yellow-500 transition-all duration-75"><a href="">PROFILE</a></li>
+                  <li class="hover:text-yellow-500 transition-all duration-75"><a href="">FEEDBACK</a></li>
+               </ul>
+            </div>
+         </div>
+      </nav>

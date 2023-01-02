@@ -1,0 +1,26 @@
+contact us -> email a message function
+profile -> upload a profile picture
+profile -> previous transactions
+order -> recently viewed
+order -> search engine animation bug
+cart -> add to cart
+login -> login API
+checkout -> payment API
+cart -> delivery form map
+feedback -> feedback page
+
+
+DONE
+Shopping cart database model
+    name foreign key from food items
+    quantity
+    total price
+DONE
+
+
+OVERVIEW - What is it? Purpose?
+FEATURES - What are the features? Most important to least important, Login, Search, etc.
+TECHNICAL - Cookiee, Technologies, Lazy loading, APIs, Responsive, CSS animation, Optimization etc.
+DEMO - Show the project. Login and Registration should be done beforehand. 
+Show the most important feature which was mentioned in the use case. 
+Login registration shouldnt be the most important feature.

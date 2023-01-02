@@ -1,0 +1,89 @@
+body {
+    /* background-image: linear-gradient(to right, rgb(159, 192, 136), rgb(232, 192, 125)); */
+    background-color: #282421;
+}
+
+.main-container {
+    height: 600px;
+    width: 1100px;
+    margin-left: 120px;
+    margin-top: 150px;
+}
+
+.left {
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+
+.left h1 {
+    font-size: 30px;
+}
+
+
+.left img {
+    width: 75%;
+    height: 75%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.right {
+    width: 50%;
+    float: right;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+.right h1 {
+    /* margin-top: 28%; */
+    text-align: center;
+}
+
+h1{
+    color: rgb(159, 192, 136);
+}
+
+.welcome-text {
+    font-size: large;
+}
+
+#khanas-logo{
+    margin-left: 35%;
+    margin-top: 60px;
+    width: 100px;
+    height: 100px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #614124;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #CC704B;
+}
+
+.button:hover {
+    background-color: #956c46
+}
+
+.button:active {
+    background-color: #614124;
+    box-shadow: 0 5px #CC704B;
+    transform: translateY(4px);
+}
+
+.anchor{
+    text-decoration: none;
+    color: #CC704B;
+}
+
+.anchor:hover{
+    color: #956c46;
+}
