@@ -249,7 +249,7 @@ if (isset($_GET['logout'])) {
                     <div class="main-filter h-screen bg-black opacity-20 w-[50vw] absolute top-0 left-0 z-50"></div>
                     <img class="w-[50vw] -translate-y-36" src="images/contact-us-img.jpg" alt="" />
                 </div>
-                <form class="flex justify-center items-center flex-col h-[90%]" action="send.php" method="post">
+                <div class="flex justify-center items-center flex-col h-[90%]">
                     <div class="title text-white text-7xl z-50 text-center border-2 w-fit mt-20 mb-6">Contact Us</div>
                     <div class="text-gray-200 text-xl mb-2 font-medium uppercase">let us know your thoughts</div>
                     <div class="h-[2px] w-[180px] bg-white my-1 rounded"></div>
@@ -277,13 +277,14 @@ if (isset($_GET['logout'])) {
                             Submit
                         </button>
 
-                        <a href="contact-us.php"><button
+                        <a href="contact-us.php">
+                            <button
                                 class="text-white border-2 w-[190px] py-2 uppercase transition-all duration-100 hover:bg-gray-200 hover:bg-opacity-70 hover:font-medium hover:text-neutral-900">
                                 Learn More
                             </button></a>
 
                     </div>
-                </form>
+                </div>
             </div>
         </section>
         <section class="scroll-child h-screen bg-[#282421] w-screen relative z-50" id="popular">

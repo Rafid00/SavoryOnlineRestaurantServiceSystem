@@ -12,7 +12,7 @@ if (isset($_POST["send"])) {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'rafid.ahmmad@northsouth.edu';
+    $mail->Username = '';
     $mail->Password = 'kvkztdzahlxzossd';
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;

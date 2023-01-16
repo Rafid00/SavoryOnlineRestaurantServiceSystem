@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 22, 2022 at 06:20 AM
+-- Generation Time: Jan 16, 2023 at 03:29 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -128,15 +128,16 @@ CREATE TABLE `users` (
   `phone` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `image_name` varchar(1024) NOT NULL DEFAULT 'propic.jpg'
+  `bio` text NOT NULL DEFAULT 'No Biography Added',
+  `image_name` varchar(1024) NOT NULL DEFAULT 'propic.webp'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `phone`, `email`, `password`, `image_name`) VALUES
-('88d6049d-8103-11ed-8a9a-7c10c9a046bd', 'rafid', '12345', 'rafid@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'propic.jpg');
+INSERT INTO `users` (`id`, `name`, `phone`, `email`, `password`, `bio`, `image_name`) VALUES
+('88d6049d-8103-11ed-8a9a-7c10c9a046bd', 'rafid', '12345', 'rafid@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Hi, I am Rafid', 'propicrafid.jpg');
 
 --
 -- Indexes for dumped tables

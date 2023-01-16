@@ -1,22 +1,14 @@
 contact us -> email a message function
 profile -> upload a profile picture
-profile -> previous transactions
-order -> recently viewed
+profile -> show data properly
+profile -> edit data profile
+order -> recently viewed items
 order -> search engine animation bug
-cart -> add to cart
+login, register -> login page, register page
 login -> login API
 checkout -> payment API
 cart -> delivery form map
 feedback -> feedback page
-
-
-DONE
-Shopping cart database model
-    name foreign key from food items
-    quantity
-    total price
-DONE
-
 
 OVERVIEW - What is it? Purpose?
 FEATURES - What are the features? Most important to least important, Login, Search, etc.

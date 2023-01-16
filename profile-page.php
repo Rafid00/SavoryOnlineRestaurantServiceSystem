@@ -1,14 +1,16 @@
 <?php
 session_start();
 
-//   if (!isset($_SESSION['name'])) {
-//   	$_SESSION['msg'] = "You must log in first";
-//   	header('location: login.php');
-//   }
 if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION['name']);
     header("location: index.php");
+}
+?>
+
+<?php
+if (!isset($_SESSION['id'])) {
+    header('location: login.php');
 }
 ?>
 
@@ -115,13 +117,33 @@ if (isset($_GET['logout'])) {
                     </div>
                     <div class="profile-name text-white">
                         <div class="mb-4 flex items-center gap-6">
+                            <?php
+
+                            include("config.php");
+
+                            if (isset($_SESSION['id'])) {
+                                $id = $_SESSION['id'];
+                                $query = "SELECT * FROM users WHERE id = '$id'";
+                                $result = mysqli_query($conn, $query);
+
+                                $row = mysqli_fetch_assoc($result);
+                                $name = $row['name'];
+                                $phone = $row['phone'];
+                                $email = $row['email'];
+                                $bio = $row['bio'];
+
+
+                            }
+
+
+                            ?>
                             <p class="title text-4xl border-white border-2 w-fit">
-                                <?php if (isset($_SESSION['name'])): ?>
-                                <?php echo $_SESSION['name']; ?>
-                                <?php endif ?></p>
+                                <?php echo ucwords($name); ?>
+                            </p>
                             <div class="btn">
                                 <a href="edit-profile.php"><button
-                                        class="text-white border-2 w-[190px] py-2 uppercase transition-all duration-100 hover:bg-gray-200 hover:bg-opacity-70 hover:font-medium hover:text-neutral-900" disabled>
+                                        class="text-white border-2 w-[190px] py-2 uppercase transition-all duration-100 hover:bg-gray-200 hover:bg-opacity-70 hover:font-medium hover:text-neutral-900"
+                                        disabled>
                                         Edit Profile
                                     </button></a>
 
@@ -131,19 +153,17 @@ if (isset($_GET['logout'])) {
 
                         <p class="mb-4">
 
-                            <?php if (isset($_SESSION['name'])): ?>
-                            <?php echo $_SESSION['phone']; ?>
-                            <?php endif ?> / <span class="text-blue-500"><a href="">
+                            <?php echo $phone; ?> / <span class="text-blue-500"><a href="">
 
-                                    <?php if (isset($_SESSION['name'])): ?>
-                                    <?php echo $_SESSION['email']; ?>
-                                    <?php endif ?></a></span>
+                                    <?php echo $email; ?>
+                                </a></span>
                         </p>
                         <p class="text-blue-500"></p>
                         <div class="profile-bio text-white">
                             <p class="text-2xl">Biography</p>
                             <p class="w-[500px]">
-                                Hi, I am <?php echo $_SESSION['name'] ?>.<br>I am a software developer.
+                                <?php echo $bio; ?>
+                            </p>
                             </p>
                         </div>
                     </div>
