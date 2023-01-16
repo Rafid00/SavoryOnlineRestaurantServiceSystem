@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: Aileron-SemiBold
+font link: http://dotcolon.net/font/aileron/
+font author: dot colon
+font author site: http://dotcolon.net/
+Slogan Font: Questrial-Regular.otf
+
+icon designer: Claire Jones
+icon designer link: /hivernoir
+        
+{"bg":"#A2C573","icon":"#E35196","font":"#E35196","slogan":"#f765aa"}
+      

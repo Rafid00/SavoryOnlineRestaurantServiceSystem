@@ -1,78 +1,186 @@
 <?php
+session_start();
 
-include('server.php')
-
-
+//   if (!isset($_SESSION['name'])) {
+//   	$_SESSION['msg'] = "You must log in first";
+//   	header('location: login.php');
+//   }
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['name']);
+    header("location: index.php");
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khanas</title>
+    <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: "#da373d",
+                    },
+                },
+            },
+        };
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+               content-visibility: auto;
+            }
+         }
+      </style>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    
-    <link rel="stylesheet" href="styles/register.css">
+        body {
+            font-family: "Montserrat";
+        }
 
-    <title>Khanas || Login</title>
+        .bg-main {
+            background-image: url(images/bg-img.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .title {
+            font-family: "Sofia", cursive;
+        }
+
+        .scroll-container {
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .scroll-child {
+            scroll-snap-align: start;
+            flex: none;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
 </head>
 
-<body>
-    <?php //require('nav-component.php'); ?>
-    <div class="container">
-        <div class="main-container shadow-lg p-3 mb-5 bg-body rounded">
-            <div class="left">
-                <h1>Welcome To Khanas</h1>
-                <img src="images/login-regi.jpg"
-                    alt="">
+<body class="bg-[#282421] overflow-x-hidden">
+
+    <?php require "nav-component.php" ?>
+
+    <div class="scroll-container h-screen w-screen flex flex-col">
+        <section class="scroll-child w-screen h-screen">
+            <div class="login">
+                <div class="left-side-login">
+                    
+                </div>
+
+                <div class="right-side-login">
+                    
+                </div>
             </div>
+        </section>
 
-            <div class="right">
-                <a href="index.php"><img id="khanas-logo" src="https://i.ibb.co/1qZfbwX/khanas.png" alt=""></a>
-                <h1>Login</h1>
+        <footer
+            class="footer scroll-child w-screen h-[50vh] text-white z-50 border-t-[1px] border-t-neutral-500 bg-[#282421] relative">
+            <div class="footer-containter absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
+                <div class="flex justify-between items-start w-[80vw]">
+                    <div class="footer-left">
+                        <div class="title text-white text-6xl z-50 mb-5 text-center border-2 w-fit">Khanas</div>
+                        <div class="nav-links-footer">
+                            <p class="w-[250px] mb-7">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero soluta illum voluptas
+                                fugit
+                                repudiandae dicta
+                                architecto temporibus est delectus aperiam.
+                            </p>
+                            <div class="social-footer flex justify-between items-center w-[220px]">
+                                <a href=""><img class="w-[30px] my-2 hover:scale-110 transition-all duration-75"
+                                        src="images/icons8-facebook.svg" alt="" /></a>
+                                <a href=""><img class="w-[30px] my-2 hover:scale-110 transition-all duration-75"
+                                        src="images/icons8-instagram.svg" alt="" /></a>
+                                <a href=""><img class="w-[30px] my-2 hover:scale-110 transition-all duration-75"
+                                        src="images/icons8-twitter.svg" alt="" /></a>
+                                <a href=""><img class="w-[30px] my-2 hover:scale-110 transition-all duration-75"
+                                        src="images/icons8-github.svg" alt="" /></a>
+                                <a href=""><img class="w-[30px] my-2 hover:scale-110 transition-all duration-75"
+                                        src="images/icons8-youtube.svg" alt="" /></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-center">
+                        <div class="nav-links-footer">
+                            <div class="text-white text-2xl z-50 w-fit font-medium">Navigations</div>
+                            <div class="h-[2px] w-[100px] bg-white my-4 rounded"></div>
 
-                <p style="margin: 20px 0; font-weight: bold;"><?php
-                if (isset($_GET["reg"]) && isset($_GET["login"])) {
-                    echo "Register Done! Login to continue.";
-                 }
-                ?></p>
-                
+                            <ul class="flex flex-col gap-2 justify-center">
+                                <li><a href="index.php">HOME</a></li>
+                                <li><a href="about-page.php">ABOUT</a></li>
+                                <li><a href="contact-us.php">CONTACT</a></li>
+                                <li><a href="profile-page.php">PROFILE</a></li>
+                                <li><a href="">ORDER</a></li>
+                                <li><a href="">FEEDBACK</a></li>
+                                <li><a href="">RESERVATION</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-right">
+                        <div class="text-white text-2xl z-50 w-fit font-medium">Location</div>
+                        <div class="h-[2px] w-[100px] bg-white my-4 rounded"></div>
 
-                <form method="POST" action="login.php">
-                    <?php include('errors.php'); ?>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            required>
-                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        <div class="nav-links-footer">
+                            <p class="w-[250px] mb-10">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                Quisquam, rem?
+                            </p>
+                            <p class="my-2"><span class="underline">Phone:</span> +8801423542132</p>
+                            <p class="my-2"><span class="underline">Email:</span> <a
+                                    href="">rafid.ahmmad.3@gmail.com</a></p>
+                            <p class="my-2"><span class="underline">Website:</span> <a href="">www.randomwebsite.com</a>
+                            </p>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" required>
-                    </div>
-                    <div>
-                        <a class="anchor" href="register.php">Don't Have an Account? Register Here...</a>
-                    </div>
-                    <br>
-                    <button type="submit" class="button" name="login_user">Login</button>
-                </form>
+                </div>
             </div>
-
-        </div>
+        </footer>
     </div>
-
-
-    <?php //require('footer.php'); ?>
-
-
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
-    </script>
 </body>
 
 </html>

@@ -16,8 +16,8 @@ if (isset($_GET['logout'])) {
 <html lang="en">
 
 <head>
-    <title>Khanas</title>
-    <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon" />
+    <title>Savor'y</title>
+    <link rel="shortcut icon" href="images/logo.svg" type="image/x-icon" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -102,11 +102,8 @@ if (isset($_GET['logout'])) {
     </style>
 </head>
 
-<body class="bg-[#E8C07D] overflow-x-hidden">
-
-
-
-    <div class="scroll-container h-screen w-screen flex flex-col">
+<body class="bg-[#E8C07D] overflow-x-hidden scroll-smooth">
+    <div class="scroll-container h-screen w-screen flex flex-col scroll-smooth">
         <section class="scroll-child w-screen h-screen">
             <nav class="text-white h-[84.5px] font-medium absolute w-screen z-10 mt-10">
                 <div class="logo-nav absolute left-[50%] translate-x-[-50%]"></div>
@@ -126,28 +123,28 @@ if (isset($_GET['logout'])) {
                     <div class="right-menu">
                         <ul class="flex gap-10 text-sm">
                             <?php if (!isset($_SESSION['name'])): ?>
-                            <li class="hover:text-yellow-500 transition-all duration-75"><a href="login.php">SIGN IN</a>
+                                <li class="hover:text-yellow-500 transition-all duration-75"><a href="login.php">SIGN IN</a>
                                 <?php endif ?>
                             </li>
                             <?php if (isset($_SESSION['name'])): ?>
-                            <li class="hover:text-yellow-500 transition-all duration-75 uppercase"><a
-                                    href="profile-page.php">
-                                    <?php echo $_SESSION['name']; ?>
-                                </a>
-                            </li>
+                                <li class="hover:text-yellow-500 transition-all duration-75 uppercase"><a
+                                        href="profile-page.php">
+                                        <?php echo $_SESSION['name']; ?>
+                                    </a>
+                                </li>
                             <?php endif ?>
                             <li class="hover:text-yellow-500 transition-all duration-75"><a href="">FEEDBACK</a></li>
 
                             <?php if (isset($_SESSION['name'])): ?>
-                            <li class="hover:text-yellow-500 transition-all duration-75"><a
-                                    href="index.php?logout='1'">LOGOUT</a>
-                            </li>
+                                <li class="hover:text-yellow-500 transition-all duration-75"><a
+                                        href="index.php?logout='1'">LOGOUT</a>
+                                </li>
                             <?php endif ?>
 
                             <?php if (!isset($_SESSION['name'])): ?>
-                            <li class="hover:text-yellow-500 transition-all duration-75"><a href="register.php">JOIN
-                                    US</a>
-                            </li>
+                                <li class="hover:text-yellow-500 transition-all duration-75"><a href="register.php">JOIN
+                                        US</a>
+                                </li>
                             <?php endif ?>
 
                         </ul>
@@ -159,13 +156,13 @@ if (isset($_GET['logout'])) {
             </div>
             <main
                 class="absolute z-10 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-45%] flex flex-col justify-center items-center">
-                <div class="title title-main text-white text-9xl z-50 my-2 text-center border-2 w-fit">Khanas</div>
-                <div class="text-gray-200 text-center text-lg border-t-white uppercase font-medium">Bet You Can't Eat
-                    Less
+                <div class="title title-main text-white text-9xl z-50 my-2 text-center border-2 w-fit">Savor'y</div>
+                <div class="text-gray-200 text-center text-lg border-t-white uppercase font-medium">Where taste meets
+                    quality
                 </div>
                 <div class="text-justify border-t-white w-[435px] mt-5 text-neutral-100"
                     style="text-align-last: center">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis est labore natus?
+                    Savor'y, where taste, quality and ambiance meet for an unforgettable dining experience.
                 </div>
                 <div class="btns flex gap-12 my-16">
                     <div class="btn">
@@ -225,10 +222,9 @@ if (isset($_GET['logout'])) {
                     <div class="h-[2px] w-[180px] bg-white my-1 rounded mb-10"></div>
 
                     <div class="w-[450px] text-justify text-white mb-10" style="text-align-last: center">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ex officiis quos quas fugit
-                        vero
-                        quibusdam est id
-                        adipisci. A? Lorem ipsum dolor sit amet.
+                        Welcome to Savory, where every dish is a masterpiece of taste and presentation. Our menu is
+                        crafted with the freshest ingredients to delight your taste buds. Join us for a memorable dining
+                        experience.
                     </div>
                     <a href="about-page.php"><button
                             class="text-white border-2 w-[190px] py-2 uppercase transition-all duration-100 hover:bg-gray-200 hover:bg-opacity-70 hover:font-medium hover:text-neutral-900">
@@ -239,7 +235,7 @@ if (isset($_GET['logout'])) {
                 <div class="about-us-home-pic h-screen">
                     <div class="main-filter h-screen bg-black opacity-20 w-[50vw] absolute top-0 right-0 z-50"></div>
 
-                    <img class="w-[50vw]" src="images/aboutus-home.jpg" alt="" />
+                    <img class="w-[50vw] h-screen object-cover" src="images/aboutus-home.jpg" alt="" />
                 </div>
             </div>
         </section>
@@ -247,7 +243,7 @@ if (isset($_GET['logout'])) {
             <div class="grid grid-cols-2 overflow-hidden">
                 <div class="about-us-home-pic h-screen relative">
                     <div class="main-filter h-screen bg-black opacity-20 w-[50vw] absolute top-0 left-0 z-50"></div>
-                    <img class="w-[50vw] -translate-y-36" src="images/contact-us-img.jpg" alt="" />
+                    <img class="w-[50vw] h-screen object-cover" src="images/contact-us-img.jpg" alt="" />
                 </div>
                 <div class="flex justify-center items-center flex-col h-[90%]">
                     <div class="title text-white text-7xl z-50 text-center border-2 w-fit mt-20 mb-6">Contact Us</div>
@@ -323,9 +319,9 @@ if (isset($_GET['logout'])) {
 
                 </div>
                 <div class="about-us-home-pic h-screen">
-                    <div class="main-filter h-screen bg-black opacity-20 w-[50vw] absolute top-0 right-0 z-50"></div>
+                    <div class="main-filter h-screen bg-black opacity-30 w-[50vw] absolute top-0 right-0 z-50"></div>
 
-                    <img class="w-[50vw]" src="images/bg-img-alt.jpg" alt="" />
+                    <img class="w-[50vw] h-screen object-cover" src="images/bg-img-alt.jpg" alt="" />
                 </div>
             </div>
         </section>
@@ -394,26 +390,3 @@ if (isset($_GET['logout'])) {
 </body>
 
 </html>
-
-<!-- <nav class="text-white bg-[#614124] h-[84.5px] font-medium fixed w-screen z-50"> -->
-
-<!-- <img
-               class="hover:scale-105 origin-center transition-all duration-200 w-[107.24px] h-auto rotate-[17deg]"
-               src="images/sm-logo.png"
-               alt=""
-            /> -->
-<!-- <svg
-               class="w-[250px] h-auto"
-               width="5026"
-               height="3071"
-               viewBox="0 0 5026 3071"
-               fill="none"
-               xmlns="http://www.w3.org/2000/svg"
-               xmlns:xlink="http://www.w3.org/1999/xlink"
-            >
-               <g id="LOGO">
-                  <path
-                     id="Union"
-                     fill-rule="evenodd"
-                     clip-rule="evenodd"
-                     d="M
