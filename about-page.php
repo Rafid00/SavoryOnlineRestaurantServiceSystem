@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <title>Khanas - About</title>
-    <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon" />
+    <title>Savor'y - About</title>
+    <link rel="shortcut icon" href="images/logo.svg" type="image/x-icon" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,15 +19,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-    tailwind.config = {
-        theme: {
-            extend: {
-                colors: {
-                    clifford: "#da373d",
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: "#da373d",
+                    },
                 },
             },
-        },
-    };
+        };
     </script>
     <style type="text/tailwindcss">
         @layer utilities {
@@ -38,53 +38,53 @@
       </style>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <style>
-    html {
-        scroll-behavior: smooth;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    body {
-        font-family: "Montserrat";
-    }
+        body {
+            font-family: "Montserrat";
+        }
 
-    .bg-main {
-        background-image: url(images/bg-img.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-attachment: fixed;
-    }
+        .bg-main {
+            background-image: url(images/bg-img.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+        }
 
-    .title {
-        font-family: "Sofia", cursive;
-    }
+        .title {
+            font-family: "Sofia", cursive;
+        }
 
-    .scroll-container {
-        scroll-snap-type: y mandatory;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        scroll-behavior: smooth;
-    }
+        .scroll-container {
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
 
-    .scroll-child {
-        scroll-snap-align: start;
-        flex: none;
-    }
+        .scroll-child {
+            scroll-snap-align: start;
+            flex: none;
+        }
 
-    ::-webkit-scrollbar {
-        width: 10px;
-    }
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
 
-    ::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
 
-    ::-webkit-scrollbar-thumb {
-        background: #888;
-    }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
 
-    ::-webkit-scrollbar-thumb:hover {
-        background: #555;
-    }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
     </style>
 </head>
 
@@ -100,19 +100,14 @@
                     <div class="h-[2px] w-[180px] bg-white my-1 rounded mb-10"></div>
 
                     <div class="w-[450px] text-justify text-white mb-5">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam saepe, voluptates omnis ad
-                        nostrum
-                        ipsam pariatur
-                        numquam quibusdam commodi cum quasi soluta quas magni tenetur, assumenda similique, ea quae a!
-                        Rerum
-                        dolorum sed
-                        pariatur totam itaque est iste velit laboriosam eveniet sint voluptas vel odit ullam, omnis
-                        alias
-                        magni. Incidunt
-                        temporibus provident in, quia iste harum repellendus quam, aliquid quasi odio quod velit magni
-                        non
-                        officia recusandae.
-                        Eius qui.
+                        Savory is a culinary experience that will tantalize your taste buds. We believe that food is not
+                        just sustenance, but an art form. Our menu is a harmonious blend of classic dishes and
+                        contemporary flavors, all crafted with the freshest ingredients. Our chefs are passionate about
+                        food and are constantly creating new and exciting dishes to keep our menu diverse and
+                        interesting. Our goal is to provide our customers with an unforgettable dining experience, from
+                        the first bite to the last. We believe that every meal should be an experience, and we strive to
+                        make every visit to Savory a special one. Join us for a memorable dining experience and discover
+                        the delicious at Savory.
                     </div>
                 </div>
                 <div class="about-us-home-pic h-screen relative overflow-hidden">
@@ -134,22 +129,14 @@
                     <div class="h-[2px] w-[180px] bg-white my-1 rounded mb-10"></div>
 
                     <div class="w-[450px] text-justify text-white mb-5">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam saepe, voluptates omnis ad
-                        nostrum
-                        ipsam pariatur
-                        numquam quibusdam commodi cum quasi soluta quas magni tenetur, assumenda similique, ea quae a!
-                        Rerum
-                        dolorum sed
-                        pariatur totam itaque est iste velit laboriosam eveniet sint voluptas vel odit ullam, omnis
-                        alias
-                        magni. Incidunt
-                        temporibus provident in, quia iste harum repellendus quam, aliquid quasi odio quod velit magni
-                        non
-                        officia recusandae.
-                        Eius qui, neque veritatis suscipit veniam, ipsum accusamus nulla doloremque, voluptas quibusdam
-                        sequi
-                        natus excepturi
-                        laborum fuga magni quam odio asperiores consequuntur.
+                        At Savory, our mission is to provide our customers with the highest quality dining experience by
+                        constantly striving for culinary excellence. We source the best ingredients to create delicious
+                        and memorable meals that will leave you wanting more. Our chefs are dedicated to creating
+                        innovative and satisfying dishes that showcase the natural flavors and textures of the
+                        ingredients. We believe that food should not only be delicious, but also visually stunning. Our
+                        goal is to provide an ambiance that is both inviting and elegant. We want our customers to feel
+                        at home and enjoy their time with us. We are committed to providing exceptional service and an
+                        unforgettable dining experience every time you visit us at Savory.
                     </div>
                 </div>
             </div>
@@ -163,33 +150,25 @@
                     <div class="h-[2px] w-[180px] bg-white my-1 rounded mb-10"></div>
 
                     <div class="w-[450px] text-justify text-white mb-5">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam saepe, voluptates omnis ad
-                        nostrum
-                        ipsam pariatur
-                        numquam quibusdam commodi cum quasi soluta quas magni tenetur, assumenda similique, ea quae a!
-                        Rerum
-                        dolorum sed
-                        pariatur totam itaque est iste velit laboriosam eveniet sint voluptas vel odit ullam, omnis
-                        alias
-                        magni. Incidunt
-                        temporibus provident in, quia iste harum repellendus quam, aliquid quasi odio quod velit magni
-                        non
-                        officia recusandae.
-                        Eius qui, neque veritatis suscipit veniam, ipsum accusamus nulla doloremque, voluptas quibusdam
-                        sequi
-                        natus excepturi
-                        laborum fuga magni quam odio asperiores consequuntur. Illo quaerat, ut ullam doloribus sunt eius
-                        quidem reiciendis
-                        ipsum quod consequuntur assumenda inventore nihil culpa explicabo commodi quasi voluptatibus eum
-                        cum
-                        fugit voluptas rem
-                        similique repellat asperiores?<br />
+                        Savory has been a family-owned and operated restaurant for over 20 years. The story of Savory
+                        began with our founder, who had a passion for cooking and a dream of opening a restaurant that
+                        would serve delicious and memorable meals using only the freshest and highest quality
+                        ingredients.
+
+                        With hard work, dedication, and a lot of love, the dream became a reality. Our founder's passion
+                        for food and commitment to excellence was the driving force behind the success of Savory. The
+                        restaurant quickly gained a reputation for its delicious food and warm, inviting atmosphere.
+
+                        Through the years, Savory has continued to evolve and grow, but our commitment to quality and
+                        excellence remains the same. We are proud to be a part of our community and we are dedicated to
+                        providing our customers with an unforgettable dining experience every time they visit us. We
+                        invite you to come and join us at Savory and discover the delicious. Let us be a part of your
+                        next memorable dining experience.<br />
                     </div>
                     <div class="text-left w-[450px] text-white mb-10">
                         Learn More :
                         <a class="text-blue-500" href="https://businessinspection.com.bd/khanas-success-story/">Article
-                            by
-                            Business Inspection Bangladesh</a>
+                            Not Available.</a>
                     </div>
                 </div>
                 <div class="about-us-home-pic h-screen relative overflow-hidden">

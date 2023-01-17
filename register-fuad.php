@@ -17,7 +17,7 @@ include('server.php')
 
     <link rel="stylesheet" href="styles/register.css">
 
-    <title>Khanas || Login</title>
+    <title>Savor'y - Registration Alternative</title>
 </head>
 
 <body>

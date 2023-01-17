@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <title>Khanas - Contact Us</title>
-    <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon" />
+    <title>Savor'y - Contact Us</title>
+    <link rel="shortcut icon" href="images/logo.svg" type="image/x-icon" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -96,7 +96,7 @@
             <div class="grid grid-cols-2 overflow-hidden">
                 <div class="about-us-home-pic h-screen relative">
                     <div class="main-filter h-screen bg-black opacity-20 w-[50vw] absolute top-0 left-0 z-10"></div>
-                    <img class="w-[50vw] -translate-y-36" src="images/khanas2.jpg" alt="" />
+                    <img class="w-[50vw] h-screen object-cover object-bottom" src="images/khanas2.jpg" alt="" />
                 </div>
                 <div class="flex justify-center items-center flex-col h-[90%]">
                     <div class="title text-white text-7xl z-50 text-center border-2 w-fit mt-20 mb-6">Contact Us</div>

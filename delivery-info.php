@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-   <title>Khanas - Delivery Info</title>
-   <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon" />
+   <title>Savor'y - Delivery Info</title>
+   <link rel="shortcut icon" href="images/logo.svg" type="image/x-icon" />
    <meta charset="UTF-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <link rel="preconnect" href="https://fonts.googleapis.com" />
