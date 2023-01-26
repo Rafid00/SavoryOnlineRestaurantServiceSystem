@@ -2,7 +2,6 @@
 
 include('server.php')
 
-
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +43,7 @@ include('server.php')
                 ?></p>
                 
 
-                <form method="POST" action="login.php">
+                <form class="text-white" method="POST" action="login.php">
                     <?php include('errors.php'); ?>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
