@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 16, 2023 at 03:29 PM
+-- Generation Time: Feb 01, 2023 at 07:12 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -137,7 +137,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `phone`, `email`, `password`, `bio`, `image_name`) VALUES
-('88d6049d-8103-11ed-8a9a-7c10c9a046bd', 'rafid', '12345', 'rafid@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Hi, I am Rafid', 'propicrafid.jpg');
+('48005b67-9ce6-11ed-bdb5-7c10c9a046bd', 'Rafid Ahmmad', '12345', 'rafid1@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'No Biography Added', 'propic.webp'),
+('88d6049d-8103-11ed-8a9a-7c10c9a046bd', 'rafid', '12345', 'rafid@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Hi, I am Rafid', 'propicrafid.jpg'),
+('dd77e4cc-9ce6-11ed-bdb5-7c10c9a046bd', 'rafid ahmmad', '12345', 'rafid2@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'No Biography Added', 'propic.webp');
 
 --
 -- Indexes for dumped tables
