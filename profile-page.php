@@ -141,11 +141,12 @@ if (!isset($_SESSION['id'])) {
                                 <?php echo ucwords($name); ?>
                             </p>
                             <div class="btn">
-                                <a href="edit-profile.php"><button
-                                        class="text-white border-2 w-[190px] py-2 uppercase transition-all duration-100 hover:bg-gray-200 hover:bg-opacity-70 hover:font-medium hover:text-neutral-900"
-                                        disabled>
-                                        Edit Profile
-                                    </button></a>
+                                <button
+                                    class="text-white border-2 w-[190px] py-2 uppercase transition-all duration-100 hover:bg-gray-200 hover:bg-opacity-70 hover:font-medium hover:text-neutral-900"
+                                    disabled>
+                                    <a href="edit-profile.php">
+                                        Edit Profile</a>
+                                </button>
 
 
                             </div>
