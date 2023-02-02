@@ -32,13 +32,15 @@
             <li>
                 <div class="h-[1px] w-[280px] bg-white rounded"></div>
             </li>
-            <li class=""><a class="hover:text-yellow-500 transition-all duration-75" href="shopping-cart.php">CART</a></li>
+            <li class=""><a class="hover:text-yellow-500 transition-all duration-75" href="shopping-cart.php">CART</a>
+            </li>
 
             </li>
             <li>
                 <div class="h-[1px] w-[280px] bg-white rounded"></div>
             </li>
-            <li class=""><a class="hover:text-yellow-500 transition-all duration-75" href="order-page.php">ORDER</a></li>
+            <li class=""><a class="hover:text-yellow-500 transition-all duration-75" href="order-page.php">ORDER</a>
+            </li>
             <li>
                 <div class="h-[1px] w-[280px] bg-white rounded"></div>
             </li>
@@ -46,16 +48,25 @@
             <li>
                 <div class="h-[1px] w-[280px] bg-white rounded"></div>
             </li>
+
             <li class=""><a class="hover:text-yellow-500 transition-all duration-75" href="">FEEDBACK</a></li>
+            <?php if (isset($_SESSION['name'])): ?>
+                <li>
+                    <div class="h-[1px] w-[280px] bg-white rounded"></div>
+                </li>
+                <li class="">
+                    <a class="hover:text-yellow-500 transition-all duration-75" href="index.php?logout='1'">LOGOUT</a>
+                </li>
+            <?php endif ?>
         </ul>
     </div>
     <script>
-    document.getElementsByClassName("nav-icon")[0].addEventListener("click", () => {
-        document.getElementsByClassName("nav-side")[0].classList.add("translate-x-0");
-    });
-    document.getElementsByClassName("close-btn")[0].addEventListener("click", () => {
-        document.getElementsByClassName("nav-side")[0].classList.remove("translate-x-0");
-    });
+        document.getElementsByClassName("nav-icon")[0].addEventListener("click", () => {
+            document.getElementsByClassName("nav-side")[0].classList.add("translate-x-0");
+        });
+        document.getElementsByClassName("close-btn")[0].addEventListener("click", () => {
+            document.getElementsByClassName("nav-side")[0].classList.remove("translate-x-0");
+        });
     </script>
 </body>
 

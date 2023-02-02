@@ -34,6 +34,10 @@ if (!isset($_SESSION['id'])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -110,7 +114,7 @@ if (!isset($_SESSION['id'])) {
     <div class="scroll-container h-screen w-screen flex flex-col">
         <section class="scroll-child contact-us h-fit bg-[#282421] w-screen relative">
             <div class="profile flex flex-col justify-center items-center mt-[100px] mb-[150px]">
-                <form action="edit-profile.php" method="post" enctype="multipart/form-data"
+                <form action="update-profile.php" method="post" enctype="multipart/form-data"
                     class="pic-name-profile flex justify-center items-center gap-14">
                     <div class="profile-pic">
 
@@ -191,3 +195,28 @@ if (!isset($_SESSION['id'])) {
 </body>
 
 </html>
+
+<?php
+if (isset($_GET["error"])) {
+    if ($_GET["error"] == "not_an_image") {
+        echo "<script>Swal.fire({
+             icon: 'warning',
+             title: 'File is not an image!',
+             text: 'Please upload an image file.'
+           })</script>";
+    } else if ($_GET["error"] == "empty_fields") {
+        echo "<script>Swal.fire({
+             icon: 'warning',
+             title: 'Empty fields!',
+             text: 'Please fill in all the fields.'
+           })</script>";
+    } else if ($_GET["error"] == "email_taken") {
+        echo "<script>Swal.fire({
+             icon: 'warning',
+             title: 'Email already taken!',
+             text: 'Please use another email.'
+           })</script>";
+    }
+}
+
+?>

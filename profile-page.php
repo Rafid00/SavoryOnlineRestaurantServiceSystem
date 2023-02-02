@@ -34,6 +34,11 @@ if (!isset($_SESSION['id'])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -280,3 +285,21 @@ if (!isset($_SESSION['id'])) {
 </body>
 
 </html>
+
+<?php
+if (isset($_GET["success"])) {
+    if ($_GET["success"] == "profile_updated") {
+        echo '<script>
+        Swal.fire({
+            icon: "success",
+            title: "Profile Updated",
+            text: "Your profile has been updated successfully!",
+            showConfirmButton: false,
+            timer: 1500
+        })
+        </script>';
+    }
+}
+
+
+?>

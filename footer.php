@@ -14,7 +14,7 @@
       <div class="footer-containter absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
          <div class="flex justify-between items-start w-[80vw]">
             <div class="footer-left">
-               <div class="title text-white text-6xl z-50 mb-5 text-center border-2 w-fit">Khanas</div>
+               <div class="title text-white text-6xl z-50 mb-5 text-center border-2 w-fit">Savor'y</div>
                <div class="nav-links-footer">
                   <p class="w-[350px] mb-7">
                      Welcome to Savory, where every dish is a masterpiece of taste and presentation. Join us for a
