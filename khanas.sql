@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2023 at 07:12 PM
+-- Generation Time: Feb 03, 2023 at 08:53 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -34,6 +34,15 @@ CREATE TABLE `cart` (
   `total_price` float NOT NULL,
   `added_time` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`customer_id`, `item_name`, `quantity`, `total_price`, `added_time`) VALUES
+('88d6049d-8103-11ed-8a9a-7c10c9a046bd', 'Rafid Cheese Pizza', 1, 3, '2023-02-02 22:26:11'),
+('88d6049d-8103-11ed-8a9a-7c10c9a046bd', 'Quarter Pounder', 1, 3, '2023-02-02 22:26:11'),
+('88d6049d-8103-11ed-8a9a-7c10c9a046bd', 'Special Cold Coffee', 1, 0.5, '2023-02-02 22:26:12');
 
 -- --------------------------------------------------------
 
@@ -129,7 +138,7 @@ CREATE TABLE `users` (
   `email` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
   `bio` text NOT NULL DEFAULT 'No Biography Added',
-  `image_name` varchar(1024) NOT NULL DEFAULT 'propic.webp'
+  `image_name` varchar(1024) NOT NULL DEFAULT 'images/uploads/propic.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -137,9 +146,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `phone`, `email`, `password`, `bio`, `image_name`) VALUES
-('48005b67-9ce6-11ed-bdb5-7c10c9a046bd', 'Rafid Ahmmad', '12345', 'rafid1@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'No Biography Added', 'propic.webp'),
-('88d6049d-8103-11ed-8a9a-7c10c9a046bd', 'rafid', '12345', 'rafid@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Hi, I am Rafid', 'propicrafid.jpg'),
-('dd77e4cc-9ce6-11ed-bdb5-7c10c9a046bd', 'rafid ahmmad', '12345', 'rafid2@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'No Biography Added', 'propic.webp');
+('88d6049d-8103-11ed-8a9a-7c10c9a046bd', 'rafid', '12345', 'rafid@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Hi, I am Rafid.', 'images/uploads/NeGaTivE_remove_texts_ultra_hd_realistic_batman_07bd380d-5762-4094-a008-fbe887e2512d.png'),
+('cef0607f-a3aa-11ed-a95c-7c10c9a046bd', 'rafid ahmmad', '12345', 'rafid1@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Hi, Everyone. I am Elong Maa.', 'images/uploads/PXL_20230107_152610125.PORTRAIT-02.jpeg');
 
 --
 -- Indexes for dumped tables
