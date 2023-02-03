@@ -112,6 +112,22 @@ if (!isset($_SESSION['id'])) {
     <?php require "nav-component.php" ?>
 
     <div class="scroll-container h-screen w-screen flex flex-col">
+        <?php
+        include("config.php");
+
+        if (isset($_SESSION['id'])) {
+            $id = $_SESSION['id'];
+            $query = "SELECT * FROM users WHERE id = '$id'";
+            $result = mysqli_query($conn, $query);
+
+            $row = mysqli_fetch_assoc($result);
+            $name = $row['name'];
+            $phone = $row['phone'];
+            $email = $row['email'];
+            $bio = $row['bio'];
+            $image = $row['image_name'];
+        }
+        ?>
         <section class="scroll-child contact-us h-fit bg-[#282421] w-screen relative">
             <div class="profile flex flex-col justify-center items-center mt-[100px] mb-[150px]">
                 <form action="update-profile.php" method="post" enctype="multipart/form-data"
@@ -129,28 +145,11 @@ if (!isset($_SESSION['id'])) {
                         </div>
                         <div class="image-pro">
                             <img id="propic" class="rounded-full w-[250px] h-[250px] object-cover object-top"
-                                src="images/propicrafid.jpeg" alt="" />
+                                src="<?php echo $image; ?>" alt="" />
                         </div>
                     </div>
                     <div class="profile-name text-white">
-                        <?php
 
-                        include("config.php");
-
-                        if (isset($_SESSION['id'])) {
-                            $id = $_SESSION['id'];
-                            $query = "SELECT * FROM users WHERE id = '$id'";
-                            $result = mysqli_query($conn, $query);
-
-                            $row = mysqli_fetch_assoc($result);
-                            $name = $row['name'];
-                            $phone = $row['phone'];
-                            $email = $row['email'];
-                            $bio = $row['bio'];
-                            $image = $row['image_name'];
-                        }
-
-                        ?>
                         <div class="mb-4 flex items-center gap-6">
 
                             <input class="text-black" type="text" name="name" value="<?php echo $name; ?>" />
@@ -215,6 +214,12 @@ if (isset($_GET["error"])) {
              icon: 'warning',
              title: 'Email already taken!',
              text: 'Please use another email.'
+           })</script>";
+    } else if ($_GET["error"] == "unknown_error") {
+        echo "<script>Swal.fire({
+             icon: 'warning',
+             title: 'Unknown error!',
+             text: 'Press save profile again.'
            })</script>";
     }
 }

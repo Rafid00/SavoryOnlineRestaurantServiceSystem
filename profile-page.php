@@ -35,7 +35,7 @@ if (!isset($_SESSION['id'])) {
     <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
 
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -113,35 +113,35 @@ if (!isset($_SESSION['id'])) {
     <?php require "nav-component.php" ?>
 
     <div class="scroll-container h-screen w-screen flex flex-col">
+        <?php
+
+        include("config.php");
+
+        if (isset($_SESSION['id'])) {
+            $id = $_SESSION['id'];
+            $query = "SELECT * FROM users WHERE id = '$id'";
+            $result = mysqli_query($conn, $query);
+
+            $row = mysqli_fetch_assoc($result);
+            $name = $row['name'];
+            $phone = $row['phone'];
+            $email = $row['email'];
+            $bio = $row['bio'];
+            $image = $row['image_name'];
+
+        }
+
+        ?>
         <section class="scroll-child contact-us h-fit bg-[#282421] w-screen relative">
             <div class="profile flex flex-col justify-center items-center mt-[100px] mb-[150px]">
                 <div class="pic-name-profile flex justify-center items-center gap-14 mb-32">
                     <div class="profile-pic">
-                        <img class="rounded-full w-[250px] h-[250px] object-cover object-top" src="images/propic.jpg"
+                        <img class="rounded-full w-[250px] h-[250px] object-cover object-top" src="<?php echo $image; ?>"
                             alt="" />
                     </div>
                     <div class="profile-name text-white">
                         <div class="mb-4 flex items-center gap-6">
-                            <?php
 
-                            include("config.php");
-
-                            if (isset($_SESSION['id'])) {
-                                $id = $_SESSION['id'];
-                                $query = "SELECT * FROM users WHERE id = '$id'";
-                                $result = mysqli_query($conn, $query);
-
-                                $row = mysqli_fetch_assoc($result);
-                                $name = $row['name'];
-                                $phone = $row['phone'];
-                                $email = $row['email'];
-                                $bio = $row['bio'];
-
-
-                            }
-
-
-                            ?>
                             <p class="title text-4xl border-white border-2 w-fit">
                                 <?php echo ucwords($name); ?>
                             </p>

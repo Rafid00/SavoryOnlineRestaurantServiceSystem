@@ -1,7 +1,5 @@
+adding back button -> make the website more user friendly
 contact us -> email a message function
-profile -> upload a profile picture
-profile -> show data properly
-profile -> edit data profile
 order -> recently viewed items
 order -> search engine animation bug
 login, register -> login page, register page

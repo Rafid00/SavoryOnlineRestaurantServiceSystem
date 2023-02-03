@@ -54,7 +54,7 @@ if (isset($_POST['edit-profile'])) {
         $user = mysqli_fetch_assoc($result);
 
         if ($user) {
-            if ($user['id']!== $id && $user['email'] === $email) {
+            if ($user['id'] !== $id && $user['email'] === $email) {
                 header("Location: edit-profile.php?error=email_taken");
                 die();
             }
@@ -63,8 +63,12 @@ if (isset($_POST['edit-profile'])) {
         $query = "UPDATE users SET name = '$name', email = '$email', phone = '$phone', bio = '$bio' WHERE id = '$id'";
         $result = mysqli_query($conn, $query);
         header("Location: profile-page.php?success=profile_updated");
+        die();
     }
 
 }
+
+header("Location: edit-profile.php?error=unknown_error");
+die();
 
 ?>
