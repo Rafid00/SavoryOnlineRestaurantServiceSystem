@@ -1,15 +1,33 @@
 <?php
 session_start();
 
-//   if (!isset($_SESSION['name'])) {
-//   	$_SESSION['msg'] = "You must log in first";
-//   	header('location: login.php');
-//   }
 if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION['name']);
     header("location: index.php");
 }
+?>
+
+<?php
+
+include("config.php");
+
+if(isset($_POST['send_message'])) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+    $user_id = $_SESSION['id'];
+
+    $sql = "INSERT INTO messages (user_id, name, email,  message) VALUES ('$user_id', '$name', '$email', '$message')";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
+        echo "<script>alert('Message sent successfully!')</script>";
+    } else {
+        echo "<script>alert('Message failed to send!')</script>";
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -245,7 +263,7 @@ if (isset($_GET['logout'])) {
                     <div class="main-filter h-screen bg-black opacity-20 w-[50vw] absolute top-0 left-0 z-50"></div>
                     <img class="w-[50vw] h-screen object-cover" src="images/contact-us-img.jpg" alt="" />
                 </div>
-                <div class="flex justify-center items-center flex-col h-[90%]">
+                <form action="index.php" method="post" class="flex justify-center items-center flex-col h-[90%]">
                     <div class="title text-white text-7xl z-50 text-center border-2 w-fit mt-20 mb-6">Contact Us</div>
                     <div class="text-gray-200 text-xl mb-2 font-medium uppercase">let us know your thoughts</div>
                     <div class="h-[2px] w-[180px] bg-white my-1 rounded"></div>
@@ -255,11 +273,11 @@ if (isset($_GET['logout'])) {
                         class="w-[400px] text-justify text-white mb-12 flex flex-col justify-center items-center gap-6">
                         <input
                             class="w-full text-center border-t-transparent border-r-transparent border-l-transparent border-b-2 border-b-white bg-inherit active:outline-none outline-0 focus:border-x-transparent focus:border-t-transparent"
-                            type="email" name="email" placeholder="EMAIL" style="--tw-ring-shadow: none" />
+                            type="email" name="name" placeholder="NAME" style="--tw-ring-shadow: none" />
 
                         <input
                             class="w-full text-center border-t-transparent border-r-transparent border-l-transparent border-b-2 border-b-white bg-inherit active:outline-none outline-0 focus:border-x-transparent focus:border-t-transparent"
-                            type="text" name="subject" placeholder="SUBJECT" style="--tw-ring-shadow: none" />
+                            type="text" name="email" placeholder="EMAIL" style="--tw-ring-shadow: none" />
 
 
                         <textarea
@@ -268,19 +286,20 @@ if (isset($_GET['logout'])) {
                             style="--tw-ring-shadow: none"></textarea>
                     </div>
                     <div class="btns flex gap-5">
-                        <button type="submit" name="send"
+                        <button type="submit" name="send_message"
                             class="text-white border-2 w-[190px] py-2 uppercase transition-all duration-100 hover:bg-gray-200 hover:bg-opacity-70 hover:font-medium hover:text-neutral-900">
                             Submit
                         </button>
 
                         <a href="contact-us.php">
-                            <button
+                            <button type="button"
                                 class="text-white border-2 w-[190px] py-2 uppercase transition-all duration-100 hover:bg-gray-200 hover:bg-opacity-70 hover:font-medium hover:text-neutral-900">
                                 Learn More
-                            </button></a>
+                            </button>
+                        </a>
 
                     </div>
-                </div>
+                </form>
             </div>
         </section>
         <section class="scroll-child h-screen bg-[#282421] w-screen relative z-50" id="popular">

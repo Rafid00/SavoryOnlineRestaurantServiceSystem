@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 03, 2023 at 08:53 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.1.12
+-- Generation Time: Feb 04, 2023 at 11:55 AM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,7 @@ CREATE TABLE `cart` (
   `quantity` tinyint(4) NOT NULL DEFAULT 0,
   `total_price` float NOT NULL,
   `added_time` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cart`
@@ -58,7 +58,7 @@ CREATE TABLE `food_items` (
   `ordered` mediumint(9) NOT NULL DEFAULT 0,
   `image_name` varchar(1024) NOT NULL DEFAULT 'food1.jpg',
   `added_time` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `food_items`
@@ -75,6 +75,19 @@ INSERT INTO `food_items` (`type`, `name`, `description`, `price`, `ordered`, `im
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `user_id` int(11) NOT NULL,
+  `name` int(11) NOT NULL,
+  `email` int(11) NOT NULL,
+  `message` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `transaction_info`
 --
 
@@ -86,7 +99,7 @@ CREATE TABLE `transaction_info` (
   `payment_method` varchar(20) NOT NULL,
   `amount` float NOT NULL,
   `delivery_address` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `transaction_info`
@@ -107,7 +120,7 @@ CREATE TABLE `transaction_items` (
   `transaction_id` varchar(36) NOT NULL,
   `item_name` text NOT NULL,
   `quantity` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `transaction_items`
@@ -139,7 +152,7 @@ CREATE TABLE `users` (
   `password` varchar(100) NOT NULL,
   `bio` text NOT NULL DEFAULT 'No Biography Added',
   `image_name` varchar(1024) NOT NULL DEFAULT 'images/uploads/propic.jpg'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
