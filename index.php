@@ -8,28 +8,6 @@ if (isset($_GET['logout'])) {
 }
 ?>
 
-<?php
-
-include("config.php");
-
-if(isset($_POST['send_message'])) {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
-    $user_id = $_SESSION['id'];
-
-    $sql = "INSERT INTO messages (user_id, name, email,  message) VALUES ('$user_id', '$name', '$email', '$message')";
-    $result = mysqli_query($conn, $sql);
-
-    if ($result) {
-        echo "<script>alert('Message sent successfully!')</script>";
-    } else {
-        echo "<script>alert('Message failed to send!')</script>";
-    }
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,6 +28,10 @@ if(isset($_POST['send_message'])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -273,16 +255,16 @@ if(isset($_POST['send_message'])) {
                         class="w-[400px] text-justify text-white mb-12 flex flex-col justify-center items-center gap-6">
                         <input
                             class="w-full text-center border-t-transparent border-r-transparent border-l-transparent border-b-2 border-b-white bg-inherit active:outline-none outline-0 focus:border-x-transparent focus:border-t-transparent"
-                            type="email" name="name" placeholder="NAME" style="--tw-ring-shadow: none" />
+                            type="text" name="name" placeholder="NAME" style="--tw-ring-shadow: none" required />
 
                         <input
                             class="w-full text-center border-t-transparent border-r-transparent border-l-transparent border-b-2 border-b-white bg-inherit active:outline-none outline-0 focus:border-x-transparent focus:border-t-transparent"
-                            type="text" name="email" placeholder="EMAIL" style="--tw-ring-shadow: none" />
+                            type="email" name="email" placeholder="EMAIL" style="--tw-ring-shadow: none" required />
 
 
                         <textarea
                             class="resize-none w-full h-[45px] text-center border-t-transparent border-r-transparent border-l-transparent border-b-2 border-b-white bg-inherit active:outline-none outline-0 focus:border-x-transparent focus:border-t-transparent"
-                            name="message" id="" cols="30" rows="10" placeholder="MESSAGE"
+                            name="message" id="" cols="30" rows="10" placeholder="MESSAGE" required
                             style="--tw-ring-shadow: none"></textarea>
                     </div>
                     <div class="btns flex gap-5">
@@ -349,6 +331,50 @@ if(isset($_POST['send_message'])) {
             <?php require "footer.php" ?>
         </div>
     </div>
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
 </body>
 
 </html>
+
+<?php
+
+include("config.php");
+
+if (isset($_POST['send_message'])) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = trim($_POST['message']);
+    $user_id = $_SESSION['id'];
+
+    $sql = "INSERT INTO messages (user_id, name, email,  message) VALUES ('$user_id', '$name', '$email', '$message')";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
+        echo '<script>
+            Swal.fire({
+                icon: "success",
+                title: "Message sent successfully!",
+                text: "We will get back to you if required. Thank You!",
+                showConfirmButton: false,
+                timer: 1500
+            })
+            </script>';
+
+    } else {
+        echo '<script>
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Message not sent!",
+                showConfirmButton: false,
+                timer: 1500
+            })
+            </script>';
+    }
+}
+
+?>
