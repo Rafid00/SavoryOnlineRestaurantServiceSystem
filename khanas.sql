@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 04, 2023 at 11:55 AM
+-- Generation Time: Feb 05, 2023 at 03:07 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -79,10 +79,10 @@ INSERT INTO `food_items` (`type`, `name`, `description`, `price`, `ordered`, `im
 --
 
 CREATE TABLE `messages` (
-  `user_id` int(11) NOT NULL,
-  `name` int(11) NOT NULL,
-  `email` int(11) NOT NULL,
-  `message` int(11) NOT NULL
+  `user_id` varchar(36) NOT NULL,
+  `name` varchar(35) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `message` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -180,6 +180,12 @@ ALTER TABLE `food_items`
   ADD PRIMARY KEY (`name`);
 
 --
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD KEY `messages_ibfk_1` (`user_id`);
+
+--
 -- Indexes for table `transaction_info`
 --
 ALTER TABLE `transaction_info`
@@ -201,6 +207,12 @@ ALTER TABLE `users`
 ALTER TABLE `cart`
   ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `users` (`id`),
   ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`item_name`) REFERENCES `food_items` (`name`);
+
+--
+-- Constraints for table `messages`
+--
+ALTER TABLE `messages`
+  ADD CONSTRAINT `messages_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
