@@ -49,7 +49,7 @@
                 <div class="h-[1px] w-[280px] bg-white rounded"></div>
             </li>
 
-            <li class=""><a class="hover:text-yellow-500 transition-all duration-75" href="">FEEDBACK</a></li>
+            <li class=""><a class="hover:text-yellow-500 transition-all duration-75" href="feedback.php">FEEDBACK</a></li>
             <?php if (isset($_SESSION['name'])): ?>
                 <li>
                     <div class="h-[1px] w-[280px] bg-white rounded"></div>

@@ -6,6 +6,12 @@ if (isset($_GET['logout'])) {
     unset($_SESSION['name']);
     header("location: index.php");
 }
+
+if (isset($_POST['send_message'])) {
+    if (!isset($_SESSION['id'])) {
+        echo "<script>window.location.href = 'login.php';</script>?";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -102,7 +108,7 @@ if (isset($_GET['logout'])) {
     </style>
 </head>
 
-<body class="bg-[#E8C07D] overflow-x-hidden scroll-smooth">
+<body class="bg-[#282421] overflow-x-hidden scroll-smooth">
     <div class="scroll-container h-screen w-screen flex flex-col scroll-smooth">
         <section class="scroll-child w-screen h-screen">
             <nav class="text-white h-[84.5px] font-medium absolute w-screen z-10 mt-10">
@@ -133,7 +139,7 @@ if (isset($_GET['logout'])) {
                                     </a>
                                 </li>
                             <?php endif ?>
-                            <li class="hover:text-yellow-500 transition-all duration-75"><a href="">FEEDBACK</a></li>
+                            <li class="hover:text-yellow-500 transition-all duration-75"><a href="feedback.php">FEEDBACK</a></li>
 
                             <?php if (isset($_SESSION['name'])): ?>
                                 <li class="hover:text-yellow-500 transition-all duration-75"><a
@@ -255,16 +261,18 @@ if (isset($_GET['logout'])) {
                         class="w-[400px] text-justify text-white mb-12 flex flex-col justify-center items-center gap-6">
                         <input
                             class="w-full text-center border-t-transparent border-r-transparent border-l-transparent border-b-2 border-b-white bg-inherit active:outline-none outline-0 focus:border-x-transparent focus:border-t-transparent"
-                            type="text" name="name" placeholder="NAME" style="--tw-ring-shadow: none" required />
+                            type="text" name="name" placeholder="NAME" style="--tw-ring-shadow: none" required
+                            autocomplete="off" />
 
                         <input
                             class="w-full text-center border-t-transparent border-r-transparent border-l-transparent border-b-2 border-b-white bg-inherit active:outline-none outline-0 focus:border-x-transparent focus:border-t-transparent"
-                            type="email" name="email" placeholder="EMAIL" style="--tw-ring-shadow: none" required />
+                            type="email" name="email" placeholder="EMAIL" style="--tw-ring-shadow: none" required
+                            autocomplete="off" />
 
 
                         <textarea
                             class="resize-none w-full h-[45px] text-center border-t-transparent border-r-transparent border-l-transparent border-b-2 border-b-white bg-inherit active:outline-none outline-0 focus:border-x-transparent focus:border-t-transparent"
-                            name="message" id="" cols="30" rows="10" placeholder="MESSAGE" required
+                            name="message" id="" cols="30" rows="10" placeholder="MESSAGE" required autocomplete="off"
                             style="--tw-ring-shadow: none"></textarea>
                     </div>
                     <div class="btns flex gap-5">
@@ -337,24 +345,22 @@ if (isset($_GET['logout'])) {
         }
     </script>
 </body>
-
 </html>
 
 <?php
-
 include("config.php");
 
 if (isset($_POST['send_message'])) {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $message = trim($_POST['message']);
-    $user_id = $_SESSION['id'];
+    if (isset($_SESSION['id'])) {
+        $name = $_POST['name'];
+        $email = strtolower($_POST['email']);
+        $message = trim($_POST['message']);
+        $user_id = $_SESSION['id'];
+        $sql = "INSERT INTO messages (user_id, name, email,  message) VALUES ('$user_id', '$name', '$email', '$message')";
+        $result = mysqli_query($conn, $sql);
 
-    $sql = "INSERT INTO messages (user_id, name, email,  message) VALUES ('$user_id', '$name', '$email', '$message')";
-    $result = mysqli_query($conn, $sql);
-
-    if ($result) {
-        echo '<script>
+        if ($result) {
+            echo '<script>
             Swal.fire({
                 icon: "success",
                 title: "Message sent successfully!",
@@ -364,8 +370,8 @@ if (isset($_POST['send_message'])) {
             })
             </script>';
 
-    } else {
-        echo '<script>
+        } else {
+            echo '<script>
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
@@ -374,7 +380,7 @@ if (isset($_POST['send_message'])) {
                 timer: 1500
             })
             </script>';
+        }
     }
 }
-
 ?>

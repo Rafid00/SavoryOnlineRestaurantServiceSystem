@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 05, 2023 at 03:07 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Feb 08, 2023 at 05:56 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,7 @@ CREATE TABLE `cart` (
   `quantity` tinyint(4) NOT NULL DEFAULT 0,
   `total_price` float NOT NULL,
   `added_time` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `cart`
@@ -58,7 +58,7 @@ CREATE TABLE `food_items` (
   `ordered` mediumint(9) NOT NULL DEFAULT 0,
   `image_name` varchar(1024) NOT NULL DEFAULT 'food1.jpg',
   `added_time` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `food_items`
@@ -83,7 +83,15 @@ CREATE TABLE `messages` (
   `name` varchar(35) NOT NULL,
   `email` varchar(50) NOT NULL,
   `message` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`user_id`, `name`, `email`, `message`) VALUES
+('88d6049d-8103-11ed-8a9a-7c10c9a046bd', 'Rafid', 'Rafid@gmail.com', 'Helol!'),
+('88d6049d-8103-11ed-8a9a-7c10c9a046bd', 'Rafid', 'rafid@gmail.com', 'Helol Again!');
 
 -- --------------------------------------------------------
 
@@ -99,7 +107,7 @@ CREATE TABLE `transaction_info` (
   `payment_method` varchar(20) NOT NULL,
   `amount` float NOT NULL,
   `delivery_address` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `transaction_info`
@@ -120,7 +128,7 @@ CREATE TABLE `transaction_items` (
   `transaction_id` varchar(36) NOT NULL,
   `item_name` text NOT NULL,
   `quantity` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `transaction_items`
@@ -152,7 +160,7 @@ CREATE TABLE `users` (
   `password` varchar(100) NOT NULL,
   `bio` text NOT NULL DEFAULT 'No Biography Added',
   `image_name` varchar(1024) NOT NULL DEFAULT 'images/uploads/propic.jpg'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
@@ -207,12 +215,6 @@ ALTER TABLE `users`
 ALTER TABLE `cart`
   ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `users` (`id`),
   ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`item_name`) REFERENCES `food_items` (`name`);
-
---
--- Constraints for table `messages`
---
-ALTER TABLE `messages`
-  ADD CONSTRAINT `messages_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
