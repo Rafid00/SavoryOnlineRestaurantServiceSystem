@@ -1,12 +1,13 @@
 adding back button -> make the website more user friendly
-contact us -> email a message function
+contact us reply -> email a message function
 order -> recently viewed items
-order -> search engine animation bug
-login, register -> login page, register page
 login -> login API
 checkout -> payment API
 cart -> delivery form map
 feedback -> feedback page
+
+css -> make a css file for all the pages
+javascript -> make a javascript file for all the pages
 
 OVERVIEW - What is it? Purpose?
 FEATURES - What are the features? Most important to least important, Login, Search, etc.

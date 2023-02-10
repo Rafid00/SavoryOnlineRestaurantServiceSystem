@@ -339,6 +339,26 @@
                 $.each(data, (index, value) => {
                     $("#everyFoodItems").append(value);
                 })
+
+                $(".add-to-cart-btn").click(function (event) {
+                    event.preventDefault();
+                    const itemName = $(this).parent().parent().children()[0].innerText;
+                    $.ajax({
+                        url: "add-to-cart.php",
+                        method: "POST",
+                        data: {
+                            itemName: itemName
+                        },
+                        success: function (data) {
+                            if (data == -1) {
+                                window.location.href = 'login.php';
+                            } else {
+                                $("#cart-count").html(data);
+                            }
+
+                        }
+                    })
+                })
             })
 
             $("#PizzaButton").click(() => {
@@ -347,6 +367,26 @@
                     if ($(value).hasClass("Pizza")) {
                         $("#everyFoodItems").append(value);
                     }
+                })
+
+                $(".add-to-cart-btn").click(function (event) {
+                    event.preventDefault();
+                    const itemName = $(this).parent().parent().children()[0].innerText;
+                    $.ajax({
+                        url: "add-to-cart.php",
+                        method: "POST",
+                        data: {
+                            itemName: itemName
+                        },
+                        success: function (data) {
+                            if (data == -1) {
+                                window.location.href = 'login.php';
+                            } else {
+                                $("#cart-count").html(data);
+                            }
+
+                        }
+                    })
                 })
             })
 
@@ -357,6 +397,26 @@
                         $("#everyFoodItems").append(value);
                     }
                 })
+
+                $(".add-to-cart-btn").click(function (event) {
+                    event.preventDefault();
+                    const itemName = $(this).parent().parent().children()[0].innerText;
+                    $.ajax({
+                        url: "add-to-cart.php",
+                        method: "POST",
+                        data: {
+                            itemName: itemName
+                        },
+                        success: function (data) {
+                            if (data == -1) {
+                                window.location.href = 'login.php';
+                            } else {
+                                $("#cart-count").html(data);
+                            }
+
+                        }
+                    })
+                })
             })
 
             $("#BurgerButton").click(() => {
@@ -365,6 +425,26 @@
                     if ($(value).hasClass("Burger")) {
                         $("#everyFoodItems").append(value);
                     }
+                })
+
+                $(".add-to-cart-btn").click(function (event) {
+                    event.preventDefault();
+                    const itemName = $(this).parent().parent().children()[0].innerText;
+                    $.ajax({
+                        url: "add-to-cart.php",
+                        method: "POST",
+                        data: {
+                            itemName: itemName
+                        },
+                        success: function (data) {
+                            if (data == -1) {
+                                window.location.href = 'login.php';
+                            } else {
+                                $("#cart-count").html(data);
+                            }
+
+                        }
+                    })
                 })
             });
 
@@ -375,7 +455,28 @@
                         $("#everyFoodItems").append(value);
                     }
                 });
+
+                $(".add-to-cart-btn").click(function (event) {
+                    event.preventDefault();
+                    const itemName = $(this).parent().parent().children()[0].innerText;
+                    $.ajax({
+                        url: "add-to-cart.php",
+                        method: "POST",
+                        data: {
+                            itemName: itemName
+                        },
+                        success: function (data) {
+                            if (data == -1) {
+                                window.location.href = 'login.php';
+                            } else {
+                                $("#cart-count").html(data);
+                            }
+
+                        }
+                    })
+                })
             })
+
 
         })();
 

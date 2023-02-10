@@ -23,14 +23,16 @@ if (isset($_POST['reg_user'])) {
   $user = mysqli_fetch_assoc($result);
 
   if ($user) {
-
     if ($user['email'] === $email) {
       array_push($errors, "Email already exists.");
     }
   }
 
+  if (strlen(trim($password)) < 8) { // check if password is at least 8 characters long
+    array_push($errors, "Password must be 8 characters long. Prefix and suffix spaces will be ignored.");
+  }
 
-  if (count($errors) == 0) {
+  if (count($errors) == 0) { // if there are no errors, save user to database
     $password = md5($password);
 
     $query = "INSERT INTO users (id, name, email, phone, password) 
