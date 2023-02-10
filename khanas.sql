@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 08, 2023 at 05:56 AM
+-- Generation Time: Feb 10, 2023 at 07:42 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -40,9 +40,12 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`customer_id`, `item_name`, `quantity`, `total_price`, `added_time`) VALUES
-('88d6049d-8103-11ed-8a9a-7c10c9a046bd', 'Rafid Cheese Pizza', 1, 3, '2023-02-02 22:26:11'),
-('88d6049d-8103-11ed-8a9a-7c10c9a046bd', 'Quarter Pounder', 1, 3, '2023-02-02 22:26:11'),
-('88d6049d-8103-11ed-8a9a-7c10c9a046bd', 'Special Cold Coffee', 1, 0.5, '2023-02-02 22:26:12');
+('88d6049d-8103-11ed-8a9a-7c10c9a046bd', 'Rafid Cheese Pizza', 4, 12, '2023-02-02 22:26:11'),
+('88d6049d-8103-11ed-8a9a-7c10c9a046bd', 'Quarter Pounder', 2, 6, '2023-02-02 22:26:11'),
+('88d6049d-8103-11ed-8a9a-7c10c9a046bd', 'Special Cold Coffee', 3, 1.5, '2023-02-02 22:26:12'),
+('88d6049d-8103-11ed-8a9a-7c10c9a046bd', 'Chicken Shawrma Wrap', 1, 2, '2023-02-09 19:52:08'),
+('88d6049d-8103-11ed-8a9a-7c10c9a046bd', 'Strawberry Coffee', 1, 1, '2023-02-09 19:56:05'),
+('88d6049d-8103-11ed-8a9a-7c10c9a046bd', 'Smoky BLT Quarter Pounder', 3, 6, '2023-02-09 19:56:53');
 
 -- --------------------------------------------------------
 
@@ -167,6 +170,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `phone`, `email`, `password`, `bio`, `image_name`) VALUES
+('6326e216-a87f-11ed-b680-7c10c9a046bd', 'raf', '123456', 'raf@gmail.com', 'e205a719aa840c828789590b5eb3b62d', 'No Biography Added', 'images/uploads/propic.jpg'),
+('7cfce3f4-a87e-11ed-b680-7c10c9a046bd', 'rafid', '12345', 'rafid2@gmail.com', '39de7ab7f9cefe9a6530bb5076d0bf6c', 'No Biography Added', 'images/uploads/propic.jpg'),
 ('88d6049d-8103-11ed-8a9a-7c10c9a046bd', 'rafid', '12345', 'rafid@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Hi, I am Rafid.', 'images/uploads/NeGaTivE_remove_texts_ultra_hd_realistic_batman_07bd380d-5762-4094-a008-fbe887e2512d.png'),
 ('cef0607f-a3aa-11ed-a95c-7c10c9a046bd', 'rafid ahmmad', '12345', 'rafid1@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Hi, Everyone. I am Elong Maa.', 'images/uploads/PXL_20230107_152610125.PORTRAIT-02.jpeg');
 
