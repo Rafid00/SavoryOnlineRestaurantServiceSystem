@@ -1,4 +1,3 @@
-adding back button -> make the website more user friendly
 contact us reply -> email a message function
 order -> recently viewed items
 login -> login API

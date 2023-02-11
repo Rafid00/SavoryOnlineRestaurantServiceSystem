@@ -196,10 +196,10 @@ if (isset($_POST['send_message'])) {
                     Stay Connected
                 </div>
                 <div class="h-20 w-[1px] bg-gray-300 my-6 rounded"></div>
-                <a href="https://www.facebook.com/khanaseat/" target="_blank"><img
+                <a href="https://www.facebook.com/rafid.ahmmad.3/" target="_blank"><img
                         class="w-[30px] mb-2 hover:scale-110 transition-all duration-75"
                         src="images/icons8-facebook.svg" alt="" /></a>
-                <a href="https://www.instagram.com/khanas_eat/" target="_blank"><img
+                <a href="https://www.instagram.com/rafid.py/" target="_blank"><img
                         class="w-[30px] my-2 hover:scale-110 transition-all duration-75"
                         src="images/icons8-instagram.svg" alt="" /></a>
                 <a href=""><img class="w-[30px] my-2 hover:scale-110 transition-all duration-75"

@@ -1,8 +1,8 @@
 <?php
 
-include('server.php')
+include('server.php');
 
-    ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -136,7 +136,8 @@ include('server.php')
                         </div>
                         <div>
                             <button name="login_user" type="submit"
-                                class="w-full bg-green-500 hover:bg-green-600 rounded-lg py-2.5 text-white font-medium ">Sign In</button>
+                                class="w-full bg-green-500 hover:bg-green-600 rounded-lg py-2.5 text-white font-medium ">Sign
+                                In</button>
                         </div>
                         <?php include('errors.php'); ?>
                     </form>
