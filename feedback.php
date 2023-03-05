@@ -107,7 +107,7 @@ if (!isset($_SESSION['id'])) {
 <body class="bg-[#282421] overflow-x-hidden">
     <?php require "nav-component.php" ?>
     <div class="h-screen w-screen flex flex-col">
-        <section class="h-screen bg-[#282421] relative flex flex-wrap justify-center pt-[100px] w-[90%] mx-auto"
+        <section class="h-screen bg-[#282421] relative flex flex-wrap justify-center pt-[150px] w-[90%] mx-auto"
             id="feedback">
             <div class="reviews grid grid-cols-2 h-screen flex-grow">
             </div>
