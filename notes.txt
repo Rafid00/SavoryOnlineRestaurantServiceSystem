@@ -5,7 +5,6 @@ checkout -> payment API
 cart -> delivery form map
 feedback -> feedback page
 order -> promo code discount
-cart -> bug fix -> item image fix
 
 css -> make a css file for all the pages
 javascript -> make a javascript file for all the pages

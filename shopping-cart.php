@@ -165,7 +165,7 @@ if (!isset($_SESSION['id'])) {
 
                   echo '<div class="fetched-items flex justify-between py-5 pl-5 pr-10 bg-stone-700 rounded-sm mb-5">
                      <div class="flex gap-5">
-                        <img class="w-[150px] h-[120px] object-cover object-bottom" src="images/food1.jpg" alt="" />
+                        <img class="w-[150px] h-[120px] object-cover" src="images/' . $row["item_img"] . '" alt="" />
                         <div class="flex flex-col justify-between">
                            <div class="">
                               <p class="item_name font-medium mb-2 w-[180px]">' . $row['item_name'] . '</p>
