@@ -190,7 +190,7 @@ if (!isset($_SESSION['id'])) {
                             while ($row = $result->fetch_assoc()) {
                                 echo '<div
                         class="rounded overflow-hidden bg-[#322d29] w-[300px] h-[400px] hover:scale-[1.02] transition-all duration-200">
-                        <a class="" href=""><img class="w-[300px] h-[200px] object-cover" src="images/purchase.jpg"
+                        <a class="" href="transaction.php?tran_id=' . $row["transaction_id"] . '"><img class="w-[300px] h-[200px] object-cover" src="images/purchase.jpg"
                                 alt="" style="object-position: 20% 75%" />
                             <div class="p-5">
                                 <p class="font-medium text-center uppercase truncate">' . $row["transaction_id"] . '</p>
@@ -239,7 +239,7 @@ if (!isset($_SESSION['id'])) {
                             while ($row = $result->fetch_assoc()) {
                                 echo '<div
                         class="rounded overflow-hidden bg-[#322d29] w-[300px] h-[400px] hover:scale-[1.02] transition-all duration-200">
-                        <a class="" href=""><img class="w-[300px] h-[200px] object-cover" src="images/purchase.jpg"
+                        <a class="" href="transaction.php?tran_id=' . $row["transaction_id"] . '"><img class="w-[300px] h-[200px] object-cover" src="images/purchase.jpg"
                                 alt="" style="object-position: 20% 75%" />
                             <div class="p-5">
                                 <p class="font-medium text-center uppercase truncate">' . $row["transaction_id"] . '</p>
