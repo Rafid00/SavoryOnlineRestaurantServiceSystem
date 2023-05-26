@@ -10,7 +10,7 @@ if (isset($_POST['input'])) {
         while ($row = mysqli_fetch_assoc($result)) {
             echo '<div
             class="' . $row["type"] . ' rounded overflow-hidden bg-[#322d29] h-[400px] hover:scale-[1.02] transition-all duration-200">
-            <a class="" href=""><img class="w-full h-[200px] object-cover" src="images/' . $row["image_name"] . '" alt=""
+            <div class="" href=""><img class="w-full h-[200px] object-cover" src="images/' . $row["image_name"] . '" alt=""
                     style="object-position: 20% 20%" />
                 <div class="p-5">
                     <p class="food-item-name font-medium text-center truncate">' . $row["name"] . '</p>
@@ -23,7 +23,7 @@ if (isset($_POST['input'])) {
                         <button class="add-to-cart-btn px-4 py-2 mt-7 bg-green-500 hover:bg-green-600 w-full rounded">Add To Cart</button>
                     </div>
                 </div>
-            </a>
+            </div>
         </div>';
         }
     }

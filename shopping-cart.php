@@ -213,7 +213,7 @@ if (!isset($_SESSION['id'])) {
 
          <section class="w-[450px]">
             <hr class="mb-5" />
-            <form class="bg-stone-700 rounded-sm px-7 py-5" action="">
+            <form class="tran-form bg-stone-700 rounded-sm px-7 py-5" method="POST">
                <p class="text-sm mb-3">Enter Promo Code</p>
                <div class="flex items-stretch">
                   <input class="rounded-l-sm text-black" type="text" name="" id="" placeholder="E.g. RAF2012" />
@@ -302,8 +302,8 @@ if (!isset($_SESSION['id'])) {
                      <p>CHECKOUT</p>
                   </button>
                </div>
+            </form>
       </div>
-      </form>
       </section>
    </div>
    <?php require "footer.php" ?>
@@ -341,6 +341,7 @@ if (!isset($_SESSION['id'])) {
       })
 
       $("#checkout-btn").click(function (event) {
+         event.preventDefault();
 
          if ($(".del-type:checked").val() == "pre-order") {
             $.ajax({
