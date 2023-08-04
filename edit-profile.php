@@ -79,15 +79,22 @@ if (!isset($_SESSION['id'])) {
         }
 
         .scroll-container {
-            scroll-snap-type: y proximity;
-            overflow-y: scroll;
-            overflow-x: hidden;
+            scroll-snap-type: none;
             scroll-behavior: smooth;
         }
 
         .scroll-child {
             scroll-snap-align: start;
             flex: none;
+        }
+
+        @media (min-width: 1024px) {
+            .scroll-container {
+                scroll-snap-type: y mandatory;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                scroll-behavior: smooth;
+            }
         }
 
         ::-webkit-scrollbar {
@@ -131,7 +138,7 @@ if (!isset($_SESSION['id'])) {
         <section class="scroll-child contact-us h-fit bg-[#282421] w-screen relative">
             <div class="profile flex flex-col justify-center items-center mt-[100px] mb-[150px]">
                 <form action="update-profile.php" method="post" enctype="multipart/form-data"
-                    class="pic-name-profile flex justify-center items-center gap-14">
+                    class="pic-name-profile flex flex-col lg:flex-row justify-center items-center gap-14">
                     <div class="profile-pic">
 
                         <div class="btn relative">
@@ -150,7 +157,7 @@ if (!isset($_SESSION['id'])) {
                     </div>
                     <div class="profile-name text-white">
 
-                        <div class="mb-4 flex items-center gap-6">
+                        <div class="lg:mb-4 mb-6 flex flex-col lg:flex-row items-center gap-6">
 
                             <input class="text-black" type="text" name="name" value="<?php echo $name; ?>" />
                             <div class="btn">
@@ -162,15 +169,15 @@ if (!isset($_SESSION['id'])) {
                             </div>
                         </div>
 
-                        <p class="mb-4 text-black">
-                            <input class="mr-5" value="<?php echo $phone; ?>" name="phone" type="text" />
+                        <p class="mb-4 text-black flex flex-col justify-center items-center lg:block  gap-6 lg:gap-0">
+                            <input class="lg:mr-5 w-[224px]" value="<?php echo $phone; ?>" name="phone" type="text" />
 
-                            <input value="<?php echo $email; ?>" name="email" type="text" />
+                            <input class="w-[224px]" value="<?php echo $email; ?>" name="email" type="text" />
                         </p>
                         <p class="text-blue-500"></p>
                         <div class="profile-bio text-white">
-                            <p class="text-2xl mb-3">Biography</p>
-                            <textarea name="bio" placeholder="Biography" class="w-[470px] text-black" cols="40"
+                            <p class="text-2xl mb-3 text-center lg:text-start">Biography</p>
+                            <textarea name="bio" placeholder="Biography" class="w-[224px] lg:w-[470px] text-black" cols="40"
                                 rows="3"><?php echo $bio; ?></textarea>
                         </div>
 

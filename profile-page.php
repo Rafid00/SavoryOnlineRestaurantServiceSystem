@@ -1,22 +1,18 @@
 <?php
 session_start();
-
 if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION['name']);
     header("location: index.php");
 }
 ?>
-
 <?php
 if (!isset($_SESSION['id'])) {
     header('location: login.php');
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>Savor'y - Profile</title>
     <link rel="shortcut icon" href="images/logo.svg" type="image/x-icon" />
@@ -80,15 +76,22 @@ if (!isset($_SESSION['id'])) {
         }
 
         .scroll-container {
-            scroll-snap-type: y proximity;
-            overflow-y: scroll;
-            overflow-x: hidden;
+            scroll-snap-type: none;
             scroll-behavior: smooth;
         }
 
         .scroll-child {
             scroll-snap-align: start;
             flex: none;
+        }
+
+        @media (min-width: 1024px) {
+            .scroll-container {
+                scroll-snap-type: y mandatory;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                scroll-behavior: smooth;
+            }
         }
 
         ::-webkit-scrollbar {
@@ -134,13 +137,13 @@ if (!isset($_SESSION['id'])) {
         ?>
         <section class="scroll-child contact-us h-fit bg-[#282421] w-screen relative">
             <div class="profile flex flex-col justify-center items-center mt-[100px] mb-[150px]">
-                <div class="pic-name-profile flex justify-center items-center gap-14 mb-32">
+                <div class="pic-name-profile flex flex-col lg:flex-row justify-center items-center gap-14 mb-32">
                     <div class="profile-pic">
                         <img class="rounded-full w-[250px] h-[250px] object-cover object-top" src="<?php echo $image; ?>"
                             alt="" />
                     </div>
                     <div class="profile-name text-white">
-                        <div class="mb-4 flex items-center gap-6">
+                        <div class="mb-4 flex flex-col lg:flex-row items-center gap-6">
 
                             <p class="title text-4xl border-white border-2 w-fit">
                                 <?php echo ucwords($name); ?>
@@ -157,17 +160,15 @@ if (!isset($_SESSION['id'])) {
                             </div>
                         </div>
 
-                        <p class="mb-4">
-
+                        <p class="mb-4 text-center lg:text-start">
                             <?php echo $phone; ?> / <span class="text-blue-500"><a href="">
-
                                     <?php echo $email; ?>
                                 </a></span>
                         </p>
                         <p class="text-blue-500"></p>
-                        <div class="profile-bio text-white">
+                        <div class="profile-bio text-white text-center lg:text-start">
                             <p class="text-2xl">Biography</p>
-                            <p class="w-[500px]">
+                            <p class="w-[250px] lg:w-[500px]">
                                 <?php echo $bio; ?>
                             </p>
                             </p>
@@ -177,7 +178,7 @@ if (!isset($_SESSION['id'])) {
 
                 <div class="prev-card text-white scroll-child pt-10 mb-20">
                     <p class="text-2xl mb-12 text-center font-medium">Previous Delivery Orders</p>
-                    <div class="order-cards grid grid-cols-4 gap-8">
+                    <div class="order-cards grid grid-cols-1 lg:grid-cols-4 gap-8">
                         <?php
 
                         include("config.php");
@@ -212,7 +213,7 @@ if (!isset($_SESSION['id'])) {
 
 
                         } else {
-                            echo "0 results";
+                            echo '<div class="text-center lg:text-start">0 results</div>';
                         }
 
                         $conn->close();
@@ -225,7 +226,7 @@ if (!isset($_SESSION['id'])) {
 
                 <div class="prev-card text-white scroll-child  pt-10 mb-20">
                     <p class="text-2xl mb-12 text-center font-medium">Previous Pre-Orders</p>
-                    <div class="order-cards grid grid-cols-4 gap-8">
+                    <div class="order-cards grid grid-cols-1 lg:grid-cols-4 gap-8">
 
                         <?php
 
@@ -261,7 +262,7 @@ if (!isset($_SESSION['id'])) {
 
 
                         } else {
-                            echo "0 results";
+                            echo '<div class="text-center lg:text-start">0 results</div>';
                         }
 
                         $conn->close();

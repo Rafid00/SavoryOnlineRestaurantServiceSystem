@@ -1,13 +1,9 @@
 <?php
-
 session_start();
-
 ?>
 
 <?php
-
 include("config.php");
-
 $sql = "SELECT * FROM `cart` WHERE customer_id='{$_SESSION['id']}'";
 $result = $conn->query($sql);
 

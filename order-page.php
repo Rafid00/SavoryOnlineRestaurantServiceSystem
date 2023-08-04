@@ -117,17 +117,18 @@
 <body class="bg-[#282421] overflow-x-hidden text-white">
     <?php require "nav-component.php" ?>
     <div class="h-screen w-screen flex flex-col">
-        <div class="flex justify-between items-center py-14 px-64">
+        <div
+            class="flex lg:justify-between items-center lg:py-14 lg:px-64 pt-28 pb-14 flex-wrap lg:flex-nowrap justify-center gap-10 lg:gap-0 w-full">
             <div class="flex flex-col justify-center items-center">
-                <p class="text-2xl font-bold">ORDER</p>
+                <p class="text-lg lg:text-2xl font-bold">ORDER</p>
                 <p class="text-xs">Food List</p>
             </div>
-            <div class="search">
-                <input class="text-black w-[500px] rounded-full h-[50px] px-10 py-2" type="search" name="search"
-                    id="search" autocomplete="off" placeholder="Search" />
+            <div class="search order-3 lg:order-2 w-full lg:w-fit flex justify-center items-center lg:block">
+                <input class="text-black w-[70%] lg:w-[500px] rounded-full h-[50px] px-10 py-2" type="search"
+                    name="search" id="search" autocomplete="off" placeholder="Search" />
 
             </div>
-            <a href="shopping-cart.php">
+            <a class="order-2 lg:order-3" href="shopping-cart.php">
                 <button class="cart p-3 rounded-full bg-white relative">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
                         width="30" height="30" viewBox="0 0 256 256" xml:space="preserve">
@@ -215,8 +216,9 @@
             </a>
         </div>
 
-        <div class="px-64 flex justify-between items-center mt-12 mb-12">
-            <div class="font-medium">Find Your Desired Food</div>
+        <div
+            class="lg:px-64 flex lg:justify-between justify-center items-center lg:mt-12 mb-12 flex-wrap text-center lg:text-start">
+            <div class="text-xs lg:text-base font-medium mb-5 lg:mb-0 w-full lg:w-fit">Find Your Desired Food</div>
             <div class="text-black">
                 <select class="w-[200px] rounded-full px-5" name="sortby" id="sortby">
                     <option value="recently">Recently added</option>
@@ -228,59 +230,63 @@
             </div>
         </div>
 
-        <div class="itemList px-64 mb-44">
-            <ul class="flex items-center gap-16 transition-all absolute h-[108px]">
+        <div class="itemList lg:px-64 mb-64 lg:mb-44">
+            <ul
+                class="flex lg:items-center gap-10 lg:gap-16 transition-all absolute h-[108px] flex-wrap lg:flex-nowrap justify-center lg:justify-start items-start w-full lg:w-fit">
                 <li>
                     <button id="EveryButton"
                         class="flex justify-center items-center flex-col focus:px-2 focus:py-3 focus:pb-5 focus:bg-zinc-700 focus:rounded-full focus:-translate-x-2 focus:-translate-y-3 transition-all">
-                        <img class="mb-4 p-1 rounded-full bg-white" src="images/meal.png" alt="" />
+                        <img class="mb-4 p-1 rounded-full bg-white w-[80%] lg:w-full" src="images/meal.png" alt="" />
                         <p class="font-medium">Every</p>
                     </button>
                 </li>
                 <li>
                     <button id="PizzaButton"
                         class="flex justify-center items-center flex-col focus:px-2 focus:py-3 focus:pb-5 focus:bg-zinc-700 focus:rounded-full focus:-translate-x-2 focus:-translate-y-3 transition-all">
-                        <img class="mb-4 p-1 rounded-full bg-white" src="images/pizza.png" alt="" />
+                        <img class="mb-4 p-1 rounded-full bg-white w-[80%] lg:w-full" src="images/pizza.png" alt="" />
                         <p class="font-medium">Pizza</p>
                     </button>
                 </li>
                 <li>
                     <button id="WrapsButton"
                         class="flex justify-center items-center flex-col focus:px-2 focus:py-3 focus:pb-5 focus:bg-zinc-700 focus:rounded-full focus:-translate-x-2 focus:-translate-y-3 transition-all">
-                        <img class="mb-4 p-1 rounded-full bg-white" src="images/wrap.png" alt="" />
+                        <img class="mb-4 p-1 rounded-full bg-white w-[80%] lg:w-full" src="images/wrap.png" alt="" />
                         <p class="font-medium">Wraps</p>
                     </button>
                 </li>
                 <li>
                     <button id="BurgerButton"
                         class="flex justify-center items-center flex-col focus:px-2 focus:py-3 focus:pb-5 focus:bg-zinc-700 focus:rounded-full focus:-translate-x-2 focus:-translate-y-3 transition-all">
-                        <img class="mb-4 p-1 rounded-full bg-white" src="images/burger.png" alt="" />
+                        <img class="mb-4 p-1 rounded-full bg-white w-[80%] lg:w-full" src="images/burger.png" alt="" />
                         <p class="font-medium">Burger</p>
                     </button>
                 </li>
                 <li>
                     <button id="DrinksButton"
                         class="flex justify-center items-center flex-col focus:px-2 focus:py-3 focus:pb-5 focus:bg-zinc-700 focus:rounded-full focus:-translate-x-2 focus:-translate-y-3 transition-all">
-                        <img class="mb-4 p-1 rounded-full bg-white" src="images/coffee.png" alt="" />
+                        <img class="mb-4 p-1 rounded-full bg-white w-[80%] lg:w-full" src="images/coffee.png" alt="" />
                         <p class="font-medium">Drinks</p>
                     </button>
                 </li>
             </ul>
         </div>
 
-        <div id="search-result-div" style="display: none">
-            <p class="text-xl mb-14 font-medium px-64">
+        <div class="w-full" id="search-result-div" style="display: none">
+            <p class="text-base lg:text-xl mb-14 font-medium text-center lg:px-64">
                 Search Result</p>
             <div class="px-64 mb-12">
-                <div class="foodItems grid grid-cols-4 gap-8 transition-all" id="searchresult">
+                <div class="foodItems grid grid-cols-1 lg:grid-cols-4 px-10 lg:px-0 gap-8 transition-all"
+                    id="searchresult">
                 </div>
             </div>
         </div>
 
-        <div class="bg-[#282421] pt-12 z-50 relative  mx-64">
-            <p class="foodItems-title text-xl font-medium mb-14">Food Item List</p>
+        <div class="bg-[#282421] pt-12 z-50 relative lg:mx-64">
+            <p class="foodItems-title text-base lg:text-xl text-center lg:text-start font-medium mb-14">Food Item List
+            </p>
 
-            <div class="foodItems grid grid-cols-4 whitespace-nowrap pb-44 w-full gap-8" id="everyFoodItems">
+            <div class="foodItems grid grid-cols-1 lg:grid-cols-4 whitespace-nowrap px-10 lg:px-0 pb-44 w-full gap-8"
+                id="everyFoodItems">
 
                 <?php
 
@@ -494,13 +500,13 @@
                         success: function (data) {
                             $("#searchresult").html(data);
                             $("#search-result-div").css("display", "block").css("animation",
-                                "slide-in 1s ease-in-out");
+                                "slide-in 0.5s ease-in-out");
                         }
                     })
                 } else {
                     let search_div = $("#search-result-div");
                     search_div.css("animation",
-                        "slide-out 1s ease-in-out").one('animationend', () => {
+                        "slide-out 0.5s ease-in-out").one('animationend', () => {
                             search_div.css("display", "none");
                         });
                 }

@@ -128,28 +128,19 @@ if (!isset($_SESSION['id'])) {
 <body class="bg-[#282421] overflow-x-hidden text-white">
     <?php require "nav-component.php" ?>
     <div class="h-screen w-screen flex flex-col">
-        <div class="flex justify-between items-center py-14 px-64">
+        <div class="flex lg:justify-between items-center lg:py-14 lg:px-64 pt-28 pb-14 flex-wrap lg:flex-nowrap justify-center gap-10 lg:gap-0 w-full">
             <div class="flex flex-col justify-center items-center">
-                <p class="text-2xl font-bold">Transaction Details</p>
+                <p class="text-lg lg:text-2xl font-bold">Transaction Details</p>
                 <p class="text-xs">
                     <?php echo $tran_id ?>
                 </p>
             </div>
         </div>
 
-        <div id="search-result-div" style="display: none">
-            <p class="text-xl mb-14 font-medium px-64">
-                Search Result</p>
-            <div class="px-64 mb-12">
-                <div class="foodItems grid grid-cols-4 gap-8 transition-all" id="searchresult">
-                </div>
-            </div>
-        </div>
-
-        <div class="bg-[#282421] pt-12 z-50 relative  mx-64">
+        <div class="bg-[#282421] pt-12 z-50 relative lg:mx-64 text-center lg:text-start">
             <p class="foodItems-title text-xl font-medium mb-14">Ordered Food Item List</p>
 
-            <div class="foodItems grid grid-cols-4 whitespace-nowrap pb-44 w-full gap-8" id="everyFoodItems">
+            <div class="foodItems grid grid-cols-1 lg:grid-cols-4 whitespace-nowrap px-10 lg:px-0 pb-44 w-full gap-8" id="everyFoodItems">
 
                 <?php
 

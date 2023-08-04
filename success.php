@@ -105,7 +105,7 @@ if (isset($_GET['logout'])) {
 <body class="bg-[#282421] overflow-x-hidden">
     <?php require "nav-component.php" ?>
     <section class="h-screen w-screen">
-        <div class="absolute left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%] flex flex-col justify-center items-center gap-2">
+        <div class="absolute left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%] flex flex-col justify-center items-center gap-2 text-center lg:text-start">
             <p class="text-white text-4xl font-medium uppercase">CHECKOUT 
                 <?php
                 if($_GET){

@@ -1,15 +1,11 @@
 <?php
-
 session_start();
-
 ?>
-
 <?php
 if (!isset($_SESSION['id'])) {
    header('location: login.php');
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -133,9 +129,10 @@ if (!isset($_SESSION['id'])) {
 <body class="bg-[#282421] overflow-x-hidden text-white">
    <?php require "nav-component.php" ?>
    <div class="h-screen w-screen flex flex-col">
-      <div class="flex justify-between items-center py-14 px-64">
+      <div
+         class="flex lg:justify-between justify-center items-center pt-28 lg:py-14 lg:px-64 text-center flex-wrap lg:flex-nowrap lg:text-start">
          <div class="flex flex-col justify-center items-center">
-            <p class="text-2xl font-bold">CART</p>
+            <p class="text-lg lg:text-2xl font-bold">CART</p>
             <p class="text-xs">Added Cart Items</p>
          </div>
       </div>
@@ -148,11 +145,9 @@ if (!isset($_SESSION['id'])) {
       </div>
 
 
-      <div class="flex justify-between items-start px-64 flex-wrap mb-56 bg-[#282421] relative z-10  pt-20">
+      <div class="flex justify-between items-start lg:px-64 flex-wrap mb-56 bg-[#282421] relative z-10  pt-20">
          <section class="w-[850px] mb-5">
-
             <hr class="hr-line-items mb-5" />
-
             <?php
             include("config.php");
 
@@ -163,10 +158,10 @@ if (!isset($_SESSION['id'])) {
                // output data of each row
                while ($row = $result->fetch_assoc()) {
 
-                  echo '<div class="fetched-items flex justify-between py-5 pl-5 pr-10 bg-stone-700 rounded-sm mb-5">
-                     <div class="flex gap-5">
+                  echo '<div class="fetched-items flex lg:justify-between justify-center py-5 lg:pl-5 lg:pr-10 pr-5 bg-stone-700 rounded-sm mb-5 gap-5">
+                     <div class="flex gap-5 flex-wrap lg:flex-nowrap justify-center lg:justify-start">
                         <img class="w-[150px] h-[120px] object-cover" src="images/' . $row["item_img"] . '" alt="" />
-                        <div class="flex flex-col justify-between">
+                        <div class="flex flex-col lg:justify-between justify-center lg:items-start items-center text-center lg:text-start">
                            <div class="">
                               <p class="item_name font-medium mb-2 w-[180px]">' . $row['item_name'] . '</p>
                               <p class="text-sm text-zinc-400">In Stock</p>
@@ -178,16 +173,16 @@ if (!isset($_SESSION['id'])) {
                      </div>
    
                      <div class="flex flex-col items-start gap-2">
-                        <p class="font-medium">Each Price</p>
+                        <p class="text-xs lg:text-base font-medium">Each Price</p>
                         <p class="text-base">' . $row['total_price'] / $row['quantity'] . '</p>
                      </div>
                      <div class="flex flex-col items-start gap-2">
-                        <p class="font-medium">Quantity</p>
+                        <p class="font-medium text-xs lg:text-base">Quantity</p>
                         <input class="quantity-meter text-black w-16 rounded h-8" type="number" name="points" step="1" value="' . $row['quantity'] . '"
                            min="1" />
                      </div>
                      <div class="flex flex-col items-end gap-2">
-                        <p class="font-medium">Total Price</p>
+                        <p class="font-medium text-xs lg:text-base">Total Price</p>
                         <p class="text-base">' . $row['total_price'] . '</p>
                      </div>
                   </div>';
@@ -196,14 +191,14 @@ if (!isset($_SESSION['id'])) {
 
 
             } else {
-               echo "0 items found in the cart";
+               echo '<div class="text-center lg:text-start mb-4 lg:mb-0">0 items found in the cart</div>';
             }
 
             $conn->close();
 
             ?>
 
-            <div class="update-btn flex justify-end gap-5 mb-16">
+            <div class="update-btn flex justify-center lg:justify-end gap-5 mb-16">
                <button class="clear-btn bg-red-500 hover:bg-red-600 h-11 w-44 rounded-sm font-medium">CLEAR ALL</button>
                <button
                   class="update-btn bg-green-600 hover:bg-green-700 h-11 w-44 rounded-sm font-medium">UPDATE</button>
@@ -213,7 +208,7 @@ if (!isset($_SESSION['id'])) {
 
          <section class="w-[450px]">
             <hr class="mb-5" />
-            <form class="tran-form bg-stone-700 rounded-sm px-7 py-5" method="POST">
+            <form class="bg-stone-700 rounded-sm px-7 py-5" method="POST">
                <p class="text-sm mb-3">Enter Promo Code</p>
                <div class="flex items-stretch">
                   <input class="rounded-l-sm text-black" type="text" name="" id="" placeholder="E.g. RAF2012" />
@@ -304,6 +299,7 @@ if (!isset($_SESSION['id'])) {
                </div>
             </form>
       </div>
+
       </section>
    </div>
    <?php require "footer.php" ?>
@@ -342,7 +338,6 @@ if (!isset($_SESSION['id'])) {
 
       $("#checkout-btn").click(function (event) {
          event.preventDefault();
-
          if ($(".del-type:checked").val() == "pre-order") {
             $.ajax({
                url: "pre-order-transaction.php",

@@ -6,8 +6,9 @@ $name = "";
 $email = "";
 $errors = array();
 
+include('config.php');
 // connect to the database
-$db = mysqli_connect('localhost:3306', 'root', '', 'savory');
+$db = $conn;
 
 // REGISTER USER
 if (!isset($_SESSION['id'])) {

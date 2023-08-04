@@ -1,19 +1,14 @@
 <?php
 session_start();
-
 if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION['name']);
     header("location: index.php");
 }
-?>
-
-<?php
 if (!isset($_SESSION['id'])) {
     header('location: login.php');
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -108,9 +103,9 @@ if (!isset($_SESSION['id'])) {
 
 <body class="bg-[#282421] overflow-x-hidden">
     <?php require "nav-component.php" ?>
-    <div class="flex justify-between items-center py-14 px-64 text-white">
+    <div class="flex lg:justify-between items-center text-white lg:py-14 lg:px-64 pt-28 pb-14 flex-wrap lg:flex-nowrap justify-center gap-10 lg:gap-0 w-full">
         <div class="flex flex-col justify-center items-center">
-            <p class="text-2xl font-bold">FEEDBACK</p>
+            <p class="text-lg lg:text-2xl font-bold">FEEDBACK</p>
             <p class="text-xs">Top Five Reviews</p>
         </div>
     </div>
@@ -165,9 +160,9 @@ if (!isset($_SESSION['id'])) {
         }
         ?>
 
-        <section class="h-screen gap-8 bg-[#282421] relative flex justify-center pt-[50px] w-[90%] mx-auto"
+        <section class="h-[150vh] lg:h-screen gap-4 lg:gap-8 bg-[#282421] relative flex flex-wrap justify-center pt-[50px] w-[90%] mx-auto"
             id="feedback">
-            <form class="reviews h-screen flex-grow text-white  flex flex-col gap-4" action="feedback.php" method="GET">
+            <form class="reviews lg:h-screen flex-grow text-white  flex flex-col gap-4" action="feedback.php" method="GET">
 
                 <?php
                 if (isset($_POST['feedback'])) {
@@ -240,7 +235,7 @@ if (!isset($_SESSION['id'])) {
 
                         }
 
-                        echo '<div class="review p-10 rounded-md flex justify-center items-start w-full h-fit flex-col gap-4"
+                        echo '<div class="review p-4 lg:p-10 rounded-md flex justify-center items-start w-full h-fit flex-col gap-4"
                         style="box-shadow: -1px 2px 18px 3px rgba(0,0,0,0.35); -webkit-box-shadow: -1px 2px 18px 3px rgba(0,0,0,0.35); -moz-box-shadow: -1px 2px 18px 3px rgba(0,0,0,0.35);">
     
                         <div class="flex gap-4 w-full items-start">
@@ -258,15 +253,15 @@ if (!isset($_SESSION['id'])) {
                                     ' . $rating_stars . '
                                 </div>
                             </div>
-                            <div class="delete-btn w-full flex justify-end ' . $dlt_btn_show . '">
+                            <div class="delete-btn w-fit lg:w-full flex justify-end ' . $dlt_btn_show . '">
                                 <button type="submit" name="delete" value="' . $row["feedback_id"] . '"
                                     class="rounded-full bg-red-500 p-2 w-fit h-fit hover:scale-[1.05] transition-all"><img
-                                        class="w-5" src="images/bin.png" alt=""></button>
+                                        class="lg:w-5 w-[40px]" src="images/bin.png" alt=""></button>
                             </div>
                         </div>
     
     
-                        <div class="review-msg">
+                        <div class="review-msg text-center lg:text-start w-full lg:w-fit">
                             ' . $row["message"] . '</div>
                     </div>';
                     }
@@ -277,11 +272,11 @@ if (!isset($_SESSION['id'])) {
                 ?>
 
             </form>
-            <form class="review-form p-10 rounded-md flex flex-col justify-center items-start w-fit h-fit" method="POST"
+            <form class="review-form p-7 lg:p-10 rounded-md flex flex-col justify-center items-start w-fit h-fit" method="POST"
                 action="feedback.php"
                 style="box-shadow: -1px 2px 18px 3px rgba(0,0,0,0.35); -webkit-box-shadow: -1px 2px 18px 3px rgba(0,0,0,0.35); -moz-box-shadow: -1px 2px 18px 3px rgba(0,0,0,0.35);">
-                <h2 class="text-white uppercase text-2xl font-semibold mb-10">Write A Review</h2>
-                <div class="flex justify-between items-center w-full mb-5">
+                <h2 class="text-white uppercase text-lg lg:text-2xl font-semibold mb-6 lg:mb-10">Write A Review</h2>
+                <div class="flex flex-wrap lg:flex-nowrap justify-between items-center w-full mb-5 gap-2 lg:gap-0">
                     <div class="pic-name-profile flex justify-start items-center gap-4">
                         <div class="profile-pic w-[65px]">
                             <img class="rounded-full object-cover object-top w-14 h-14" src="<?php echo $image; ?>"
@@ -343,9 +338,9 @@ if (!isset($_SESSION['id'])) {
                     <input class="hidden" type="number" name="rating" id="rating" value="1" max="5" min="1">
                 </div>
 
-                <div class="relative mb-10">
+                <div class="relative mb-5 lg:mb-10">
                     <textarea id="message" name="message" rows="3" cols="50"
-                        class="block px-3 pb-2.5 pt-4 text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        class="block px-3 w-full pb-2.5 pt-4 text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         placeholder=" " autocomplete="off" required /></textarea>
                     <label for="message"
                         class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-[#282421] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Message</label>

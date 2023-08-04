@@ -65,15 +65,22 @@ include('server.php')
         }
 
         .scroll-container {
-            scroll-snap-type: y mandatory;
-            overflow-y: scroll;
-            overflow-x: hidden;
+            scroll-snap-type: none;
             scroll-behavior: smooth;
         }
 
         .scroll-child {
             scroll-snap-align: start;
             flex: none;
+        }
+
+        @media (min-width: 1024px) {
+            .scroll-container {
+                scroll-snap-type: y mandatory;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                scroll-behavior: smooth;
+            }
         }
 
         ::-webkit-scrollbar {
@@ -98,56 +105,57 @@ include('server.php')
     <?php require "nav-component.php" ?>
     <div class="scroll-container h-screen w-screen flex flex-col">
         <section class="scroll-child h-screen bg-[#282421] w-screen relative">
-            <div class="grid grid-cols-2 overflow-hidden h-screen">
+            <div class="grid grid-cols-1 lg:grid-cols-2 overflow-hidden h-screen">
 
                 <div class="flex justify-center items-center flex-col h-[90%]">
-                    <div class="title text-white text-7xl z-50 text-center border-2 w-fit mt-20 mb-10">Register</div>
+                    <div class="title text-white text-5xl lg:text-7xl z-50 text-center border-2 w-fit mt-20 mb-10">
+                        Register</div>
 
-                    <form class="mb-5 w-[35%]" method="POST" action="register.php">
+                    <form class="mb-5 w-[70%] md:w-[35%]" method="POST" action="register.php">
                         <div class="relative mb-5">
                             <input type="text" id="fullname" name="name"
-                                class="block px-3 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                placeholder=" " autocomplete="off" required/>
-                            <label for="email"
+                                class="block px-3 pb-2.5 pt-4 w-full text-sm  bg-transparent rounded-lg border-1 border-gray-300 appearance-none text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                placeholder=" " autocomplete="off" required />
+                            <label for="fullname"
                                 class="absolute text-sm text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-[#282421] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Full
                                 Name</label>
                         </div>
                         <div class="relative mb-5">
-                            <input type="tel" name="phone"
-                                class="block px-3 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                placeholder=" " autocomplete="off" required/>
-                            <label for="email"
+                            <input type="tel" name="phone" id="phoneNo"
+                                class="block px-3 pb-2.5 pt-4 w-full text-sm  bg-transparent rounded-lg border-1 border-gray-300 appearance-none text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                placeholder=" " autocomplete="off" required />
+                            <label for="phoneNo"
                                 class="absolute text-sm text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-[#282421] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Phone
                                 Number</label>
                         </div>
                         <div class="relative mb-5">
-                            <input type="email" name="email"
-                                class="block px-3 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                placeholder=" " autocomplete="off" required/>
+                            <input type="email" name="email" id="email"
+                                class="block px-3 pb-2.5 pt-4 w-full text-sm  bg-transparent rounded-lg border-1 border-gray-300 appearance-none text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                placeholder=" " autocomplete="off" required />
                             <label for="email"
                                 class="absolute text-sm text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-[#282421] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Email
                                 Address</label>
                         </div>
                         <div class="relative mb-5">
-                            <input type="password" name="password"
-                                class="block px-3 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                placeholder=" " minlength="8" required/>
+                            <input type="password" name="password" id="password"
+                                class="block px-3 pb-2.5 pt-4 w-full text-sm  bg-transparent rounded-lg border-1 border-gray-300 appearance-none text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                placeholder=" " minlength="8" required />
                             <label for="password"
                                 class="absolute text-sm text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-[#282421] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Password</label>
                         </div>
-                        <div class="mb-5 text-white text-sm">
-                            <p>Already have an account? <span><a
-                                        href="http://localhost/SavoryOnlineRestaurantServiceSystem/login.php"
+                        <div class="mb-5 text-white text-xs lg:text-sm">
+                            <p>Already have an account? <span><a href="login.php"
                                         class="text-blue-600 hover:underline">Login Here</a></span></p>
                         </div>
                         <div>
                             <button type="submit" type="submit" value="Register" name="reg_user"
-                                class="w-full bg-green-500 hover:bg-green-600 rounded-lg py-2.5 text-white font-medium ">Sign up</button>
+                                class="w-full bg-green-500 hover:bg-green-600 rounded-lg py-2.5 text-white font-medium ">Sign
+                                up</button>
                         </div>
                         <?php include('errors.php'); ?>
                     </form>
                 </div>
-                <div class="h-screen relative overflow-hidden">
+                <div class="h-screen relative overflow-hidden hidden lg:block">
                     <div class="main-filter h-screen bg-black opacity-30 w-[50vw] absolute top-0 left-0 z-10"></div>
                     <img class="w-[50vw] h-screen object-cover object-bottom" src="images/reg-bg.jpg" alt="" />
                 </div>

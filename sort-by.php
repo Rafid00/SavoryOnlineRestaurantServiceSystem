@@ -13,7 +13,7 @@ for ($i = 0; $i < 5; $i++) {
         while ($row = $result->fetch_assoc()) {
             $SortedItems[$i] = $SortedItems[$i] . '<div
             class="' . $row["type"] . ' rounded overflow-hidden bg-[#322d29] h-[400px] hover:scale-[1.02] transition-all duration-200">
-            <div class="" href=""><img class="w-full h-[200px] object-cover" src="images/' . $row["image_name"] . '" alt=""
+            <div class="cursor-pointer" href=""><img class="w-full h-[200px] object-cover" src="images/' . $row["image_name"] . '" alt=""
                     style="object-position: 20% 20%" />
                 <div class="p-5">
                     <p class="food-item-name font-medium text-center truncate">' . $row["name"] . '</p>

@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['name']);
+    header("location: index.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,15 +68,22 @@
         }
 
         .scroll-container {
-            scroll-snap-type: y mandatory;
-            overflow-y: scroll;
-            overflow-x: hidden;
+            scroll-snap-type: none;
             scroll-behavior: smooth;
         }
 
         .scroll-child {
             scroll-snap-align: start;
             flex: none;
+        }
+
+        @media (min-width: 1024px) {
+            .scroll-container {
+                scroll-snap-type: y mandatory;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                scroll-behavior: smooth;
+            }
         }
 
         ::-webkit-scrollbar {
@@ -92,14 +108,18 @@
     <?php require "nav-component.php" ?>
     <div class="scroll-container h-screen w-screen flex flex-col">
         <section class="scroll-child h-screen bg-[#282421] w-screen relative" id="aboutUs">
-            <div class="grid grid-cols-2 overflow-hidden h-screen">
-                <div class="flex justify-center items-center flex-col h-[83%]">
-                    <div class="title text-white text-7xl z-50 text-center border-2 w-fit mt-20 mb-6">About Us</div>
-                    <div class="text-gray-200 text-xl mb-2 font-medium uppercase">What Defines Us The Best</div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 overflow-hidden h-screen">
+                <div class="flex justify-center items-center flex-col h-full lg:h-[83%] z-20">
+                    <div
+                        class="title text-white text-3xl md:text-5xl lg:text-7xl z-50 text-center border-2 w-fit lg:mt-20 mb-6">
+                        About Us</div>
+                    <div class="text-gray-200 text-xs md:text-base lg:text-xl mb-2 font-medium uppercase">What Defines
+                        Us The Best</div>
                     <div class="h-[2px] w-[180px] bg-white my-1 rounded"></div>
                     <div class="h-[2px] w-[180px] bg-white my-1 rounded mb-10"></div>
 
-                    <div class="w-[450px] text-justify text-white mb-5">
+                    <div
+                        class="w-[230px] md:w-[300px] lg:w-[450px] text-xs md:text-sm lg:text-base text-justify text-white lg:mb-5">
                         Savory is a culinary experience that will tantalize your taste buds. We believe that food is not
                         just sustenance, but an art form. Our menu is a harmonious blend of classic dishes and
                         contemporary flavors, all crafted with the freshest ingredients. Our chefs are passionate about
@@ -110,9 +130,12 @@
                         the delicious at Savory.
                     </div>
                 </div>
-                <div class="about-us-home-pic h-screen relative overflow-hidden">
-                    <div class="main-filter h-screen bg-black opacity-20 w-[50vw] absolute top-0 right-0 z-10"></div>
-                    <img class="w-[50vw] h-screen object-cover object-top" src="images/restaurant-image.jpg" alt="" />
+                <div class="about-us-home-pic h-screen fixed lg:relative overflow-hidden">
+                    <div
+                        class="main-filter h-screen lg:h-screen bg-black opacity-50 lg:opacity-20 w-screen lg:w-[50vw] absolute top-0 right-0 z-10">
+                    </div>
+                    <img class="w-screen lg:static lg:w-[50vw] h-screen object-cover object-top z-0"
+                        src="images/restaurant-image.jpg" alt="" />
                 </div>
             </div>
         </section>
@@ -122,13 +145,13 @@
                     <div class="main-filter h-screen bg-black opacity-20 w-[50vw] absolute top-0 left-0 z-10"></div>
                     <img class="w-[50vw] h-screen object-cover object-top" src="images/chef.jpg" alt="" />
                 </div>
-                <div class="flex justify-center items-center flex-col h-[90%]">
-                    <div class="title text-white text-7xl z-50 text-center border-2 w-fit mt-20 mb-6">Our Mission</div>
-                    <div class="text-gray-200 text-xl mb-2 font-medium uppercase">What's Our Main Goal</div>
+                <div class="flex justify-center items-center flex-col h-fit w-fit lg:w-full lg:h-[90%] rounded lg:rounded-none absolute lg:static top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] lg:translate-x-0 lg:translate-y-0 z-20 lg:bg-inherit bg-[#646464b7] p-9 lg:p-0">
+                    <div class="title text-white text-3xl md:text-5xl lg:text-7xl z-50 text-center border-2 w-fit lg:mt-20 mb-6">Our Mission</div>
+                    <div class="text-gray-200 text-xs md:text-base lg:text-xl mb-2 font-medium uppercase">What's Our Main Goal</div>
                     <div class="h-[2px] w-[180px] bg-white my-1 rounded"></div>
                     <div class="h-[2px] w-[180px] bg-white my-1 rounded mb-10"></div>
 
-                    <div class="w-[450px] text-justify text-white mb-5">
+                    <div class="w-[230px] md:w-[300px] lg:w-[450px] text-xs md:text-sm lg:text-base text-justify text-white lg:mb-5">
                         At Savory, our mission is to provide our customers with the highest quality dining experience by
                         constantly striving for culinary excellence. We source the best ingredients to create delicious
                         and memorable meals that will leave you wanting more. Our chefs are dedicated to creating
@@ -143,13 +166,14 @@
         </section>
         <section class="scroll-child h-screen bg-[#282421] w-screen relative" id="story">
             <div class="grid grid-cols-2 overflow-hidden h-screen">
-                <div class="flex justify-center items-center flex-col h-[94%]">
-                    <div class="title text-white text-7xl z-50 text-center border-2 w-fit mt-20 mb-6">Story Behind</div>
-                    <div class="text-gray-200 text-xl mb-2 font-medium uppercase">The Story Behind Our Success</div>
+            <div class="lg:hidden"></div>
+                <div class="flex justify-center items-center flex-col  h-fit w-fit lg:w-full lg:h-[90%] text-center lg:text-start rounded lg:rounded-none absolute lg:static top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] lg:translate-x-0 lg:translate-y-0 z-20 lg:bg-inherit bg-[#646464b7] p-9 lg:p-0">
+                    <div class="title text-white text-3xl md:text-5xl lg:text-7xl z-50 text-center border-2 w-fit lg:mt-20 mb-6 ">Story Behind</div>
+                    <div class="text-gray-200 text-xs md:text-base lg:text-xl mb-2 font-medium uppercase">The Story Behind Our Success</div>
                     <div class="h-[2px] w-[180px] bg-white my-1 rounded"></div>
                     <div class="h-[2px] w-[180px] bg-white my-1 rounded mb-10"></div>
 
-                    <div class="w-[450px] text-justify text-white mb-5">
+                    <div class="w-[230px] md:w-[300px] lg:w-[450px] text-xs md:text-sm lg:text-base text-justify text-white mb-5">
                         Savory has been a family-owned and operated restaurant for over 20 years. The story of Savory
                         began with our founder, who had a passion for cooking and a dream of opening a restaurant that
                         would serve delicious and memorable meals using only the freshest and highest quality
@@ -165,7 +189,7 @@
                         invite you to come and join us at Savory and discover the delicious. Let us be a part of your
                         next memorable dining experience.<br />
                     </div>
-                    <div class="text-left w-[450px] text-white mb-10">
+                    <div class="text-left w-[230px] md:w-[300px] lg:w-[450px] text-xs md:text-sm lg:text-base text-white lg:mb-10">
                         Learn More :
                         <a class="text-blue-500" href="https://businessinspection.com.bd/khanas-success-story/">Article
                             Not Available.</a>
